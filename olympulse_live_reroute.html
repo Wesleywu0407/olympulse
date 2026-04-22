@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OlymPulse Live Reroute</title>
+<link rel="stylesheet" href="css/prototype.css">
+<script src="js/prototype.js" defer></script>
+<link rel="stylesheet" href="css/screens/live-reroute.css">
+</head>
+<body data-screen="map">
+  <main class="live-reroute-screen" aria-label="Live reroute warning">
+    <header class="app-header">
+      <div class="header-left">
+        <div class="brand">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <span>OlymPulse</span>
+        </div>
+        <div class="pressure-status">
+          <span aria-hidden="true"></span>
+          <p>Pressure detected ahead</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <span class="identity-pill">Local</span>
+        <button class="settings-button" type="button" aria-label="Settings">
+          <svg viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M10 3.3v2M10 14.7v2M4.8 4.8l1.4 1.4M13.8 13.8l1.4 1.4M3.3 10h2M14.7 10h2M4.8 15.2l1.4-1.4M13.8 6.2l1.4-1.4" />
+            <circle cx="10" cy="10" r="2.7" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <section class="urgent-alert" aria-label="Urgent reroute alert">
+      <div class="alert-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 3 21 19H3L12 3Z" />
+          <path d="M12 8.2v5M12 16.7h.01" />
+        </svg>
+      </div>
+      <div>
+        <h1>Crowd surge detected — rerouting suggested</h1>
+        <p>South Bank just went critical · your original route is now blocked</p>
+      </div>
+    </section>
+
+    <section class="reroute-map-card" aria-label="Live reroute map">
+      <svg class="reroute-map" viewBox="0 0 351 170" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="351" height="170" rx="16" fill="#F8F6F0" />
+        <g stroke="#EDEAE2" stroke-linecap="round">
+          <path d="M16 39H335" stroke-width="4" />
+          <path d="M16 83H335" stroke-width="4" />
+          <path d="M16 126H335" stroke-width="5" />
+          <path d="M60 14V151" stroke-width="3" />
+          <path d="M127 12V154" stroke-width="4" />
+          <path d="M207 15V147" stroke-width="3" />
+          <path d="M281 16V146" stroke-width="3" />
+          <path d="M28 137C76 104 120 86 166 79C222 70 268 45 328 29" stroke-width="4" />
+          <path d="M23 26C76 50 112 68 151 91C191 116 247 130 326 134" stroke-width="3" />
+        </g>
+        <path d="M-6 155C42 142 82 150 126 158C181 169 225 157 267 150C305 144 331 149 357 157" stroke="#C7E8F5" stroke-width="16" fill="none" stroke-linecap="round" />
+        <path d="M-6 155C42 142 82 150 126 158C181 169 225 157 267 150C305 144 331 149 357 157" stroke="#DDF2FA" stroke-width="8" fill="none" stroke-linecap="round" />
+
+        <g class="critical-halo">
+          <circle cx="214" cy="118" r="66" fill="#D9281D" opacity="0.09" />
+          <circle cx="214" cy="118" r="52" fill="#D9281D" opacity="0.13" />
+          <circle cx="214" cy="118" r="39" fill="#D9281D" opacity="0.18" />
+          <circle cx="214" cy="118" r="25" fill="#D9281D" opacity="0.26" />
+        </g>
+
+        <path class="original-route" d="M82 49 C130 68 174 90 214 118 C244 136 272 139 306 126" />
+        <path class="new-route" d="M82 49 C101 66 112 88 114 123 C159 146 232 147 306 126" />
+
+        <g class="blocked-pill">
+          <rect x="221" y="88" width="47" height="18" rx="9" />
+          <text x="244.5" y="100" text-anchor="middle">Blocked</text>
+        </g>
+        <g class="new-route-pill">
+          <rect x="114" y="133" width="58" height="18" rx="9" />
+          <text x="143" y="145" text-anchor="middle">New route</text>
+        </g>
+        <g class="road-closed">
+          <rect x="180" y="112" width="69" height="18" rx="5" />
+          <text x="214.5" y="124" text-anchor="middle">ROAD CLOSED</text>
+        </g>
+
+        <circle cx="82" cy="49" r="6" fill="#FFFFFF" stroke="#8B857D" stroke-width="1.6" />
+        <circle cx="306" cy="126" r="6" fill="#FFFFFF" stroke="#1DB87A" stroke-width="1.8" />
+        <circle class="user-position" cx="102" cy="72" r="4" fill="#1DB87A" />
+        <circle class="user-ring" cx="102" cy="72" r="8" fill="#1DB87A" opacity="0.18" />
+
+        <text class="place-label" x="82" y="37" text-anchor="middle">Roma St</text>
+        <text class="place-label" x="214" y="107" text-anchor="middle">South Bank</text>
+        <text class="place-label" x="114" y="156" text-anchor="middle">West End</text>
+      </svg>
+    </section>
+
+    <section class="comparison-strip" aria-label="Original route compared with new route">
+      <article class="compare-card original">
+        <p>Original route</p>
+        <strong>Through South Bank</strong>
+        <span>Blocked — avoid</span>
+      </article>
+      <article class="compare-card recommended">
+        <div>
+          <p>New route</p>
+          <em>Recommended</em>
+        </div>
+        <strong>Via West End</strong>
+        <span>+4 min · stress-free</span>
+      </article>
+    </section>
+
+    <section class="reroute-actions" aria-label="Reroute actions">
+      <button class="primary-action" type="button" data-next-screen="feedback">Accept new route</button>
+      <button class="secondary-action" type="button">Keep original route</button>
+      <p>Not recommended — very crowded now</p>
+    </section>
+  </main>
+</body>
+</html>

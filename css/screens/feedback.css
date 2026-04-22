@@ -1,0 +1,522 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+}
+
+:root {
+  --screen-bg: #f5f2ec;
+  --card-bg: #ffffff;
+  --card-border: #e0ddd6;
+  --green: #1db87a;
+  --green-dark: #1a7a50;
+  --ink: #29251f;
+  --muted: #7f776f;
+  --soft-grey: #ebe8e0;
+}
+
+body {
+  width: 390px;
+  max-width: 100vw;
+  min-height: 667px;
+  background: var(--screen-bg);
+}
+
+.arrival-screen {
+  width: 390px;
+  max-width: 100vw;
+  min-height: 667px;
+  padding: 10px 12px 64px;
+  background: var(--screen-bg);
+  color: var(--ink);
+}
+
+.app-header,
+.brand,
+.header-right,
+.success-check,
+.emoji-row,
+.tag-grid,
+.stats-strip {
+  display: flex;
+  align-items: center;
+}
+
+.app-header {
+  height: 29px;
+  justify-content: space-between;
+}
+
+.brand {
+  gap: 7px;
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.brand-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+}
+
+.header-right {
+  gap: 8px;
+}
+
+.identity-pill {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #e3f7ee;
+  color: var(--green-dark);
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.arrival-status {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.success-moment {
+  padding: 26px 0 24px;
+  text-align: center;
+}
+
+.success-check {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 13px;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--green);
+  color: #ffffff;
+}
+
+.success-check svg {
+  width: 28px;
+  height: 28px;
+}
+
+.success-check path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.success-moment h1 {
+  color: var(--ink);
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.success-moment p {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.feedback-card {
+  padding: 15px 14px 14px;
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  background: var(--card-bg);
+}
+
+.feedback-card h2 {
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.feedback-subtitle {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1.35;
+}
+
+.emoji-row {
+  margin-top: 14px;
+  justify-content: space-between;
+  font-size: 19px;
+  line-height: 1;
+}
+
+.feeling-slider {
+  width: 100%;
+  margin-top: 7px;
+  accent-color: var(--green);
+}
+
+.mood-wrap {
+  margin-top: 9px;
+  text-align: center;
+}
+
+.mood-pill {
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 999px;
+  background: #e3f7ee;
+  color: var(--green-dark);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.tag-section {
+  margin-top: 14px;
+}
+
+.tag-section p {
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1;
+}
+
+.tag-section p span {
+  font-size: 10.5px;
+}
+
+.tag-grid {
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 10px;
+}
+
+.tag {
+  height: 28px;
+  padding: 0 11px;
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--muted);
+  font-size: 11.5px;
+  cursor: pointer;
+}
+
+.tag.active {
+  border-color: var(--green);
+  background: #eaf9f1;
+  color: var(--green-dark);
+  font-weight: 750;
+}
+
+.share-section {
+  margin-top: 12px;
+}
+
+.share-button {
+  width: 100%;
+  height: 50px;
+  border: 0;
+  border-radius: 14px;
+  background: var(--green);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.share-section p {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 11px;
+  text-align: center;
+}
+
+.stats-strip {
+  min-height: 67px;
+  margin-top: 12px;
+  justify-content: space-around;
+  border-radius: 12px;
+  background: var(--soft-grey);
+}
+
+.stats-strip div {
+  min-width: 84px;
+  text-align: center;
+}
+
+.stats-strip strong,
+.stats-strip span {
+  display: block;
+}
+
+.stats-strip strong {
+  color: var(--ink);
+  font-size: 20px;
+  font-weight: 850;
+  line-height: 1.1;
+}
+
+.stats-strip strong.green {
+  color: var(--green);
+}
+
+.stats-strip span {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 10.5px;
+}
+
+/* Premium visual polish pass */
+body {
+  background:
+    radial-gradient(circle at 50% -10%, rgba(255, 254, 250, 0.96) 0, rgba(255, 254, 250, 0) 360px),
+    linear-gradient(180deg, #eee9df 0%, var(--premium-page-bg) 100%);
+}
+
+.arrival-screen {
+  min-height: 100vh;
+  padding: 16px 16px 76px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.9) 0, rgba(255, 255, 255, 0) 190px),
+    radial-gradient(circle at 92% 12%, rgba(36, 149, 111, 0.08) 0, rgba(36, 149, 111, 0) 220px),
+    linear-gradient(180deg, var(--premium-bg) 0%, #f2eee6 100%);
+}
+
+.app-header {
+  height: 42px;
+}
+
+.brand {
+  color: var(--premium-ink);
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.brand-dot {
+  width: 9px;
+  height: 9px;
+  background: var(--premium-calm);
+  box-shadow: 0 0 0 5px rgba(36, 149, 111, 0.1);
+}
+
+.identity-pill {
+  background: var(--premium-calm-soft);
+  color: var(--premium-calm-dark);
+  font-weight: 760;
+}
+
+.arrival-status {
+  color: var(--premium-muted);
+  font-weight: 720;
+}
+
+.success-moment {
+  padding: 34px 0 28px;
+}
+
+.success-check {
+  width: 62px;
+  height: 62px;
+  margin-bottom: 15px;
+  background: var(--premium-calm);
+  box-shadow: 0 16px 34px rgba(36, 149, 111, 0.22);
+}
+
+.success-moment h1 {
+  color: var(--premium-ink);
+  font-size: 24px;
+  font-weight: 850;
+  letter-spacing: -0.01em;
+}
+
+.success-moment p {
+  color: var(--premium-muted);
+  font-size: 13.5px;
+}
+
+.feedback-card,
+.stats-strip {
+  border-color: var(--premium-border);
+  box-shadow: var(--premium-shadow-card);
+}
+
+.feedback-card {
+  padding: 18px 16px;
+  border-radius: 22px;
+  background: rgba(255, 254, 250, 0.94);
+}
+
+.feedback-card h2 {
+  color: var(--premium-ink);
+  font-size: 17px;
+  font-weight: 840;
+}
+
+.feedback-subtitle {
+  color: var(--premium-muted);
+  line-height: 1.45;
+}
+
+.mood-pill {
+  background: var(--premium-calm-soft);
+  color: var(--premium-calm-dark);
+  font-weight: 800;
+}
+
+.tag {
+  border-color: var(--premium-border);
+  background: rgba(255, 254, 250, 0.92);
+  color: var(--premium-muted);
+}
+
+.tag.active {
+  border-color: rgba(36, 149, 111, 0.36);
+  background: var(--premium-calm-soft);
+  color: var(--premium-calm-dark);
+}
+
+.share-button {
+  border-radius: 18px;
+  background: var(--premium-calm);
+  box-shadow: 0 14px 28px rgba(36, 149, 111, 0.2);
+}
+
+.stats-strip {
+  min-height: 72px;
+  border: 1px solid var(--premium-border);
+  border-radius: 20px;
+  background: rgba(255, 254, 250, 0.76);
+}
+
+.stats-strip strong {
+  color: var(--premium-ink);
+  font-weight: 850;
+}
+
+.stats-strip strong.green {
+  color: var(--premium-calm);
+}
+
+/* Step 3: typography + spacing upgrade only */
+.arrival-screen {
+  padding: 18px 16px 78px;
+}
+
+.app-header {
+  height: 44px;
+  align-items: center;
+}
+
+.brand {
+  font-size: 21.5px;
+  font-weight: 850;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.identity-pill,
+.arrival-status {
+  font-size: 11px;
+  font-weight: 780;
+  line-height: 1;
+}
+
+.success-moment {
+  padding: 36px 0 30px;
+}
+
+.success-moment h1 {
+  font-size: 25px;
+  font-weight: 850;
+  line-height: 1.14;
+  letter-spacing: 0;
+}
+
+.success-moment p {
+  margin-top: 7px;
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+
+.feedback-card {
+  padding: 19px 16px;
+}
+
+.feedback-card h2 {
+  font-size: 17.5px;
+  font-weight: 850;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.feedback-subtitle {
+  margin-top: 6px;
+  font-size: 12.8px;
+  line-height: 1.48;
+}
+
+.emoji-row {
+  margin-top: 18px;
+}
+
+.mood-pill {
+  margin-top: 12px;
+  padding: 7px 11px;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.tag-section {
+  margin-top: 18px;
+}
+
+.tag-section p {
+  margin-bottom: 10px;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.tag-grid {
+  gap: 8px;
+}
+
+.tag {
+  min-height: 31px;
+  padding: 0 11px;
+  font-size: 11.5px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.share-section {
+  margin-top: 14px;
+}
+
+.share-button {
+  height: 54px;
+  font-size: 15.5px;
+  font-weight: 840;
+  line-height: 1;
+}
+
+.share-section p {
+  margin-top: 8px;
+  font-size: 11.5px;
+  line-height: 1.3;
+}
+
+.stats-strip {
+  margin-top: 14px;
+  min-height: 76px;
+}
+
+.stats-strip strong {
+  font-size: 21px;
+  font-weight: 850;
+  line-height: 1.05;
+}
+
+.stats-strip span {
+  margin-top: 5px;
+  font-size: 10.8px;
+  line-height: 1.2;
+}

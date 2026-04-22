@@ -1,0 +1,147 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OlymPulse Insights</title>
+<link rel="stylesheet" href="css/prototype.css">
+<script src="js/prototype.js" defer></script>
+<link rel="stylesheet" href="css/screens/personal-insight.css">
+</head>
+<body data-screen="insight">
+
+  <!-- Top bar -->
+  <div class="personal-insight-001">
+    <div class="personal-insight-002">
+      <div class="personal-insight-003"></div>
+      <span class="personal-insight-004">OlymPulse</span>
+      <div class="personal-insight-005">Local</div>
+    </div>
+    <span class="personal-insight-006">Your insights</span>
+  </div>
+
+  <!-- Header summary -->
+  <div class="personal-insight-007">
+    <p class="personal-insight-008">This week · 7 trips logged</p>
+    <h2 class="personal-insight-009">You avoided crowds<br>on 5 out of 7 trips</h2>
+  </div>
+
+  <!-- 3 stat cards -->
+  <div class="personal-insight-010">
+    <div class="personal-insight-011">
+      <p class="personal-insight-012">42</p>
+      <p class="personal-insight-013">min saved this week</p>
+    </div>
+    <div class="personal-insight-011">
+      <p class="personal-insight-014">5</p>
+      <p class="personal-insight-013">detours taken</p>
+    </div>
+    <div class="personal-insight-011">
+      <p class="personal-insight-015">2</p>
+      <p class="personal-insight-013">high pressure zones hit</p>
+    </div>
+  </div>
+
+  <div class="personal-insight-016"></div>
+
+  <!-- Weekly pressure bar chart -->
+  <div class="personal-insight-017">
+    <p class="personal-insight-018">Your stress exposure this week</p>
+    <div class="personal-insight-019">
+      <!-- bars: Mon–Sun, height = stress level -->
+      <div class="personal-insight-020">
+        <div class="personal-insight-021" id="b1"></div>
+        <span class="personal-insight-022">Mon</span>
+      </div>
+      <div class="personal-insight-020">
+        <div class="personal-insight-023" id="b2"></div>
+        <span class="personal-insight-022">Tue</span>
+      </div>
+      <div class="personal-insight-020">
+        <div class="personal-insight-021" id="b3"></div>
+        <span class="personal-insight-022">Wed</span>
+      </div>
+      <div class="personal-insight-020">
+        <div class="personal-insight-024" id="b4"></div>
+        <span class="personal-insight-025">Thu</span>
+      </div>
+      <div class="personal-insight-020">
+        <div class="personal-insight-021" id="b5"></div>
+        <span class="personal-insight-022">Fri</span>
+      </div>
+      <div class="personal-insight-020">
+        <div class="personal-insight-023" id="b6"></div>
+        <span class="personal-insight-022">Sat</span>
+      </div>
+      <div class="personal-insight-020">
+        <div class="personal-insight-026" id="b7"></div>
+        <span class="personal-insight-027">Today</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="personal-insight-016"></div>
+
+  <!-- Pattern insight -->
+  <div class="personal-insight-028">
+    <p class="personal-insight-029">Your pattern</p>
+    <div class="personal-insight-030">
+
+      <div class="personal-insight-031">
+        <div class="personal-insight-032">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="5.5" stroke="#0F6E56" stroke-width="1.2" fill="none"/><path d="M7.5 4.5v3l2 1.5" stroke="#0F6E56" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <p class="personal-insight-006">Best time to leave</p>
+          <p class="personal-insight-033">Before 8 AM or after 9 PM — lowest pressure</p>
+        </div>
+      </div>
+
+      <div class="personal-insight-031">
+        <div class="personal-insight-034">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 2L7.5 13M2 7.5h11" stroke="#993C1D" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <p class="personal-insight-006">Your pressure hotspot</p>
+          <p class="personal-insight-035">South Bank — you've hit it 3× this week</p>
+        </div>
+      </div>
+
+      <div class="personal-insight-031">
+        <div class="personal-insight-036">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 11l3-3 2.5 2.5L12 4" stroke="#185FA5" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <p class="personal-insight-006">Compared to last week</p>
+          <p class="personal-insight-037">28% less stress exposure — keep it up</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="personal-insight-016"></div>
+
+  <!-- Community contribution -->
+  <div class="personal-insight-038">
+    <div class="personal-insight-039">
+      <div>
+        <p class="personal-insight-040">Your community impact</p>
+        <p class="personal-insight-041">7 reports shared · helped 1,240 locals</p>
+      </div>
+      <div class="personal-insight-042">
+        <svg width="44" height="44" viewBox="0 0 44 44">
+          <circle cx="22" cy="22" r="16" fill="none" stroke="var(--color-border-tertiary)" stroke-width="3"/>
+          <circle cx="22" cy="22" r="16" fill="none" stroke="#1D9E75" stroke-width="3" stroke-linecap="round"
+            stroke-dasharray="100" stroke-dashoffset="28" transform="rotate(-90 22 22)"/>
+          <text x="22" y="26" text-anchor="middle" font-size="11" font-weight="500" fill="#0F6E56">72%</text>
+        </svg>
+        <p class="personal-insight-022">accuracy</p>
+      </div>
+    </div>
+  </div>
+
+<script src="js/screens/personal-insight.js" defer></script>
+</body>
+</html>

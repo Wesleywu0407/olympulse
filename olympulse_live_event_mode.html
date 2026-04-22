@@ -1,0 +1,184 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OlymPulse Live Event</title>
+<link rel="stylesheet" href="css/prototype.css">
+<script src="js/prototype.js" defer></script>
+<link rel="stylesheet" href="css/screens/live-event.css">
+</head>
+<body data-screen="event">
+
+  <!-- Top bar — event mode -->
+  <div class="live-event-001">
+    <div class="live-event-002">
+      <div class="live-event-003"></div>
+      <span class="live-event-004">OlymPulse</span>
+      <div class="live-event-005">
+        <div class="live-event-006"></div>
+        Live Event
+      </div>
+    </div>
+    <div class="live-event-007">
+      <div class="live-event-008">Local</div>
+      <div class="live-event-009">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 4h10M2 7h7M2 10h9" stroke="var(--color-text-secondary)" stroke-width="1.2" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Event alert banner -->
+  <div class="live-event-010">
+    <div class="live-event-011">
+      <div>
+        <div class="live-event-012">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1L1 10h10L6 1z" stroke="#E2631A" stroke-width="1.2" fill="none" stroke-linejoin="round"/><line x1="6" y1="5" x2="6" y2="7.5" stroke="#E2631A" stroke-width="1.2" stroke-linecap="round"/><circle cx="6" cy="9" r="0.6" fill="#E2631A"/></svg>
+          <p class="live-event-013">Athletics — Suncorp Stadium</p>
+        </div>
+        <p class="live-event-014">Event ends at 9:30 PM. Expect major crowd surge across South Bank and Roma St in the next 45 min.</p>
+      </div>
+      <div class="live-event-015">9:30 PM</div>
+    </div>
+  </div>
+
+  <!-- MAP -->
+  <div class="live-event-016">
+    <svg width="100%" height="100%" viewBox="0 0 340 240" xmlns="http://www.w3.org/2000/svg">
+
+      <!-- River -->
+      <path d="M0 168 Q60 155 120 163 Q180 173 240 160 Q290 149 340 155" stroke="#C8E6F5" stroke-width="16" fill="none" stroke-linecap="round"/>
+
+      <!-- Roads -->
+      <line x1="0" y1="118" x2="340" y2="118" stroke="#DDD9D0" stroke-width="6"/>
+      <line x1="170" y1="0" x2="170" y2="240" stroke="#DDD9D0" stroke-width="4.5"/>
+      <line x1="30" y1="45" x2="310" y2="190" stroke="#DDD9D0" stroke-width="3"/>
+      <line x1="20" y1="178" x2="340" y2="82" stroke="#DDD9D0" stroke-width="2.5"/>
+      <line x1="80" y1="0" x2="80" y2="240" stroke="#E5E1D8" stroke-width="2"/>
+      <line x1="255" y1="0" x2="255" y2="240" stroke="#E5E1D8" stroke-width="1.5"/>
+      <line x1="0" y1="65" x2="340" y2="65" stroke="#E5E1D8" stroke-width="1.5"/>
+
+      <!-- Blocks -->
+      <rect x="100" y="78" width="55" height="36" rx="3" fill="#E5E1D8" opacity="0.8"/>
+      <rect x="185" y="82" width="50" height="32" rx="3" fill="#E5E1D8" opacity="0.8"/>
+      <rect x="35" y="26" width="36" height="26" rx="3" fill="#E5E1D8" opacity="0.7"/>
+
+      <!-- CRITICAL zone — South Bank -->
+      <circle class="live-event-017" cx="170" cy="148" r="52" fill="#E2631A" opacity="0.08"/>
+      <circle cx="170" cy="148" r="36" fill="#E2631A" opacity="0.15"/>
+      <circle cx="170" cy="148" r="20" fill="#E2631A" opacity="0.25"/>
+
+      <!-- HIGH — Roma St -->
+      <circle class="live-event-018" cx="80" cy="75" r="38" fill="#EF9F27" opacity="0.1"/>
+      <circle cx="80" cy="75" r="22" fill="#EF9F27" opacity="0.2"/>
+
+      <!-- HIGH — Suncorp area -->
+      <circle class="live-event-019" cx="255" cy="55" r="28" fill="#E2631A" opacity="0.1"/>
+      <circle cx="255" cy="55" r="16" fill="#E2631A" opacity="0.2"/>
+
+      <!-- MED — CBD -->
+      <circle class="live-event-020" cx="170" cy="75" r="18" fill="#EF9F27" opacity="0.12"/>
+      <circle cx="170" cy="75" r="11" fill="#EF9F27" opacity="0.18"/>
+
+      <!-- Safe route for locals (green dashed) -->
+      <path class="live-event-021" d="M80 75 Q75 110 85 135 Q95 155 110 168" stroke="#1D9E75" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-dasharray="6,4"/>
+
+      <!-- Closure mark on main road -->
+      <rect x="148" y="113" width="44" height="10" rx="3" fill="#E2631A" opacity="0.25"/>
+      <text x="170" y="121" text-anchor="middle" font-size="6.5" font-weight="500" fill="#993C1D">ROAD CLOSED</text>
+
+      <!-- Labels -->
+      <text x="170" y="151" text-anchor="middle" font-size="8" font-weight="500" fill="#7A3010">South Bank</text>
+      <text x="80" y="78" text-anchor="middle" font-size="7.5" font-weight="500" fill="#854F0B">Roma St</text>
+      <text x="255" y="58" text-anchor="middle" font-size="7" font-weight="500" fill="#7A3010">Suncorp</text>
+      <text x="170" y="78" text-anchor="middle" font-size="7" fill="#854F0B">CBD</text>
+
+      <!-- User location -->
+      <circle cx="80" cy="75" r="6" fill="white" stroke="#1D9E75" stroke-width="2"/>
+      <circle cx="80" cy="75" r="3" fill="#1D9E75"/>
+
+    </svg>
+
+    <!-- Legend -->
+    <div class="live-event-022">
+      <div class="live-event-023">
+        <div class="live-event-024"></div>
+        <span class="live-event-025">Critical</span>
+      </div>
+      <div class="live-event-026"></div>
+      <div class="live-event-023">
+        <div class="live-event-027"></div>
+        <span class="live-event-025">High</span>
+      </div>
+      <div class="live-event-026"></div>
+      <div class="live-event-023">
+        <div class="live-event-028"></div>
+        <span class="live-event-029">Live</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pressure timeline -->
+  <div class="live-event-030">
+    <div class="live-event-031">
+      <p class="live-event-032">Pressure forecast — next 2 hrs</p>
+      <p class="live-event-033">South Bank</p>
+    </div>
+    <div class="live-event-034">
+      <div class="live-event-035">
+        <div class="live-event-036"></div>
+        <span class="live-event-037">Now</span>
+      </div>
+      <div class="live-event-035">
+        <div class="live-event-038"></div>
+        <span class="live-event-037">+30m</span>
+      </div>
+      <div class="live-event-035">
+        <div class="live-event-039"></div>
+        <span class="live-event-040">+1hr</span>
+      </div>
+      <div class="live-event-035">
+        <div class="live-event-041"></div>
+        <span class="live-event-037">+1.5h</span>
+      </div>
+      <div class="live-event-035">
+        <div class="live-event-042"></div>
+        <span class="live-event-037">+2hr</span>
+      </div>
+      <div class="live-event-035">
+        <div class="live-event-043"></div>
+        <span class="live-event-037">+2.5h</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Action cards -->
+  <div class="live-event-044">
+    <div class="live-event-045">
+      <div class="live-event-002">
+        <div class="live-event-046">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5l3 3 6-6" stroke="#0F6E56" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <p class="live-event-047">Safe detour via West End</p>
+          <p class="live-event-048">Avoids all closures — 19 min</p>
+        </div>
+      </div>
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="var(--color-text-secondary)" stroke-width="1.3" stroke-linecap="round"/></svg>
+    </div>
+    <div class="live-event-045">
+      <div class="live-event-002">
+        <div class="live-event-049">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="2" y="4" width="9" height="6" rx="1.5" stroke="#185FA5" stroke-width="1.2" fill="none"/><path d="M4.5 4V3a2 2 0 014 0v1" stroke="#185FA5" stroke-width="1.2" fill="none"/></svg>
+        </div>
+        <div>
+          <p class="live-event-047">Wait 2 hrs — crowds clear</p>
+          <p class="live-event-050">Pressure drops after 11 PM</p>
+        </div>
+      </div>
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="var(--color-text-secondary)" stroke-width="1.3" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OlymPulse Arrival</title>
+<link rel="stylesheet" href="css/prototype.css">
+<script src="js/prototype.js" defer></script>
+<link rel="stylesheet" href="css/screens/feedback.css">
+</head>
+<body data-screen="feedback">
+  <main class="arrival-screen" aria-label="OlymPulse arrival feedback">
+    <header class="app-header">
+      <div class="brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>OlymPulse</span>
+      </div>
+      <div class="header-right">
+        <span class="identity-pill">Local</span>
+        <span class="arrival-status">You arrived</span>
+      </div>
+    </header>
+
+    <section class="success-moment" aria-label="Arrival success">
+      <div class="success-check" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <path d="M5 12.4 9.5 16.9 19 7.4" />
+        </svg>
+      </div>
+      <h1>You made it</h1>
+      <p>Via West End · 19 min · avoided South Bank</p>
+    </section>
+
+    <section class="feedback-card" aria-label="Trip feedback">
+      <h2>How did the city feel?</h2>
+      <p class="feedback-subtitle">Your experience helps other locals plan better.</p>
+
+      <div class="emoji-row" aria-hidden="true">
+        <span>😊</span>
+        <span>😰</span>
+      </div>
+
+      <input class="feeling-slider" type="range" min="0" max="100" value="35" id="feel-slider" aria-label="City pressure feeling" />
+
+      <div class="mood-wrap">
+        <span class="mood-pill" id="feel-label">Calm — manageable</span>
+      </div>
+
+      <div class="tag-section">
+        <p>What did you notice? <span>(optional)</span></p>
+        <div class="tag-grid" id="tags">
+          <button class="tag" type="button">Too crowded</button>
+          <button class="tag" type="button">Hard to walk</button>
+          <button class="tag" type="button">Good signage</button>
+          <button class="tag active" type="button">Felt safe</button>
+          <button class="tag" type="button">Confusing exits</button>
+          <button class="tag" type="button">Smooth flow</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="share-section">
+      <button class="share-button" id="feedback-submit" type="button">Share with community ↗</button>
+      <p>Anonymous · helps 1,240 locals nearby</p>
+    </section>
+
+    <section class="stats-strip" aria-label="Trip stats">
+      <div>
+        <strong>19</strong>
+        <span>min taken</span>
+      </div>
+      <div>
+        <strong class="green">42</strong>
+        <span>min saved</span>
+      </div>
+      <div>
+        <strong>1</strong>
+        <span>crowd avoided</span>
+      </div>
+    </section>
+  </main>
+
+<script src="js/screens/feedback.js" defer></script>
+</body>
+</html>

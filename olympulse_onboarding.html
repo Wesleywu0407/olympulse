@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OlymPulse Onboarding</title>
+<link rel="stylesheet" href="css/prototype.css">
+<script src="js/prototype.js" defer></script>
+<link rel="stylesheet" href="css/screens/onboarding.css">
+</head>
+<body data-screen="onboarding">
+  <main class="onboarding-screen" aria-label="Choose your OlymPulse identity">
+    <p class="top-label">OlymPulse</p>
+
+    <header class="intro">
+      <h1>How are you moving<br>through Brisbane today?</h1>
+      <p>We'll personalise your pressure view based on your needs.</p>
+    </header>
+
+    <section class="identity-list" aria-label="Select identity">
+      <button class="identity-card" id="c-tourist" type="button" data-identity="tourist">
+        <span class="identity-icon icon-blue" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 21s6-6.5 6-11a6 6 0 0 0-12 0c0 4.5 6 11 6 11Z" />
+            <circle cx="12" cy="10" r="2.1" />
+          </svg>
+        </span>
+        <span class="identity-copy">
+          <strong>Visitor</strong>
+          <em>Exploring the city</em>
+          <span>Discover less crowded routes. See event hotspots in real time.</span>
+        </span>
+        <span class="selection-check" aria-hidden="true">
+          <svg viewBox="0 0 16 16"><path d="M3.3 8.1 6.4 11.2 12.8 4.8" /></svg>
+        </span>
+      </button>
+
+      <button class="identity-card selected" id="c-local" type="button" data-identity="local" aria-pressed="true">
+        <span class="identity-glow" aria-hidden="true"></span>
+        <span class="identity-icon icon-green" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M5 11.2 12 5l7 6.2V19a1 1 0 0 1-1 1h-4.3v-5.4H10.3V20H6a1 1 0 0 1-1-1v-7.8Z" />
+            <path d="M12 5.2 18.3 8v4.1c0 3.6-2.6 6.7-6.3 7.9-3.7-1.2-6.3-4.3-6.3-7.9V8L12 5.2Z" />
+          </svg>
+        </span>
+        <span class="identity-copy">
+          <strong>Local resident</strong>
+          <em>Living in Brisbane</em>
+          <span>Protect your everyday routes. Know when to avoid tourist hotspots.</span>
+        </span>
+        <span class="selection-check" aria-hidden="true">
+          <svg viewBox="0 0 16 16"><path d="M3.3 8.1 6.4 11.2 12.8 4.8" /></svg>
+        </span>
+      </button>
+
+      <button class="identity-card" id="c-commuter" type="button" data-identity="commuter">
+        <span class="identity-icon icon-amber" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <rect x="5" y="8" width="14" height="10" rx="2" />
+            <path d="M9 8V6.8A2.8 2.8 0 0 1 11.8 4h.4A2.8 2.8 0 0 1 15 6.8V8" />
+            <path d="M12 11v3l2 1.2" />
+          </svg>
+        </span>
+        <span class="identity-copy">
+          <strong>Daily commuter</strong>
+          <em>Getting to work or school</em>
+          <span>Fast, efficient paths. Alerts when your usual route gets disrupted.</span>
+        </span>
+        <span class="selection-check" aria-hidden="true">
+          <svg viewBox="0 0 16 16"><path d="M3.3 8.1 6.4 11.2 12.8 4.8" /></svg>
+        </span>
+      </button>
+    </section>
+
+    <button class="continue-button" id="cta" type="button">Continue</button>
+  </main>
+
+<script src="js/screens/onboarding.js" defer></script>
+</body>
+</html>

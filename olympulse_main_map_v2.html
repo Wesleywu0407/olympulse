@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OlymPulse Map</title>
+<link rel="stylesheet" href="css/prototype.css">
+<script src="js/prototype.js" defer></script>
+<link rel="stylesheet" href="css/screens/main-map.css">
+</head>
+<body data-screen="map">
+  <main class="map-screen" aria-label="OlymPulse pressure navigation map">
+    <header class="app-header">
+      <div class="brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>OlymPulse</span>
+      </div>
+      <div class="header-actions">
+        <span class="identity-pill">Local</span>
+        <button class="settings-button" type="button" aria-label="Settings">
+          <svg viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M10 3.3v2M10 14.7v2M4.8 4.8l1.4 1.4M13.8 13.8l1.4 1.4M3.3 10h2M14.7 10h2M4.8 15.2l1.4-1.4M13.8 6.2l1.4-1.4" />
+            <circle cx="10" cy="10" r="2.7" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <section class="alert-banner" aria-label="Pressure alert">
+      <div class="alert-dot" aria-hidden="true"></div>
+      <div>
+        <p class="alert-title">South Bank — pressure building</p>
+        <p class="alert-copy">Athletics ends 9:30 PM · crowd surge in 42 min · your route is protected</p>
+      </div>
+    </section>
+
+    <label class="search-card" aria-label="Search destination">
+      <svg viewBox="0 0 20 20" aria-hidden="true">
+        <circle cx="8.7" cy="8.7" r="5.2" />
+        <path d="M12.6 12.6 16.8 16.8" />
+      </svg>
+      <span>Where are you going?</span>
+    </label>
+
+    <section class="map-card" aria-label="Brisbane pressure map">
+      <svg class="map-svg" viewBox="0 0 351 165" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="351" height="165" rx="16" fill="#F8F6F0" />
+
+        <g stroke="#E8E5DD" stroke-linecap="round" fill="none">
+          <path d="M16 34H334" stroke-width="2.5" />
+          <path d="M16 75H334" stroke-width="2" />
+          <path d="M16 114H334" stroke-width="2.5" />
+          <path d="M57 12V139" stroke-width="1.5" />
+          <path d="M123 8V147" stroke-width="2" />
+          <path d="M202 10V141" stroke-width="1.5" />
+          <path d="M281 12V136" stroke-width="1.5" />
+          <path d="M24 133C76 98 122 80 169 73C226 65 270 41 327 25" stroke-width="2" />
+          <path d="M26 22C75 46 109 64 146 88C188 116 242 128 324 131" stroke-width="1.5" />
+        </g>
+
+        <g fill="#EDEAE2" opacity="0.72">
+          <rect x="71" y="45" width="38" height="23" rx="4" />
+          <rect x="144" y="27" width="42" height="27" rx="4" />
+          <rect x="222" y="83" width="48" height="28" rx="4" />
+          <rect x="287" y="48" width="33" height="23" rx="4" />
+        </g>
+
+        <path d="M-4 151C47 137 84 145 126 154C180 166 224 151 269 144C305 138 331 144 355 151" stroke="#D8EEE4" stroke-width="17" fill="none" stroke-linecap="round" />
+        <path d="M-4 151C47 137 84 145 126 154C180 166 224 151 269 144C305 138 331 144 355 151" stroke="#EAF6F0" stroke-width="9" fill="none" stroke-linecap="round" />
+
+        <g class="pressure pressure-south-bank">
+          <circle cx="211" cy="116" r="52" fill="#FF5032" opacity="0.07" />
+          <circle cx="211" cy="116" r="40" fill="#FF5032" opacity="0.10" />
+          <circle cx="211" cy="116" r="29" fill="#FF5032" opacity="0.14" />
+          <circle cx="211" cy="116" r="18" fill="#FF5032" opacity="0.20" />
+        </g>
+
+        <g class="pressure pressure-suncorp">
+          <circle cx="82" cy="47" r="38" fill="#FFAF30" opacity="0.08" />
+          <circle cx="82" cy="47" r="27" fill="#FFAF30" opacity="0.13" />
+          <circle cx="82" cy="47" r="17" fill="#FFAF30" opacity="0.18" />
+        </g>
+
+        <g class="pressure pressure-west-end">
+          <circle cx="112" cy="122" r="25" fill="#1DB87A" opacity="0.08" />
+          <circle cx="112" cy="122" r="15" fill="#1DB87A" opacity="0.13" />
+        </g>
+
+        <path class="safe-route" d="M82 47 C74 73 79 101 112 122" stroke="#1DB87A" stroke-width="3" stroke-dasharray="7 6" stroke-linecap="round" fill="none" />
+
+        <circle cx="82" cy="47" r="7.5" fill="#FFFFFF" stroke="#1DB87A" stroke-width="2" />
+        <circle cx="82" cy="47" r="3.2" fill="#1DB87A" />
+
+        <text x="82" y="35" text-anchor="middle">Roma St</text>
+        <text x="211" y="119" text-anchor="middle">South Bank</text>
+        <text x="112" y="137" text-anchor="middle">West End</text>
+      </svg>
+
+      <div class="route-badge">
+        <strong>Route protected</strong>
+        <span>Avoiding South Bank</span>
+      </div>
+
+      <div class="map-legend">
+        <span><i class="legend-dot high"></i>High</span>
+        <span><i class="legend-dot mid"></i>Mid</span>
+        <span><i class="legend-dot calm"></i>Calm</span>
+      </div>
+    </section>
+
+    <div class="section-row">
+      <p>Routes for locals</p>
+      <span>Updated 30s ago</span>
+    </div>
+
+    <section class="route-list" aria-label="Recommended routes">
+      <article class="route-card route-card-best" data-next-screen="routeSelected">
+        <div class="route-icon route-icon-green">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v11M5.7 10.8 10 15.1l4.3-4.3" /></svg>
+        </div>
+        <div class="route-copy">
+          <div class="route-title-row">
+            <h2>Your usual route</h2>
+            <span>Recommended</span>
+          </div>
+          <p class="route-subtext green">Clear today — low pressure</p>
+        </div>
+        <div class="route-meta">
+          <strong>14 min</strong>
+          <div class="pressure-bars" aria-label="Low pressure">
+            <i class="bar green h1"></i><i class="bar green h2"></i><i class="bar green h1"></i><i class="bar empty"></i><i class="bar empty"></i>
+          </div>
+        </div>
+      </article>
+
+      <article class="route-card route-card-mid">
+        <div class="route-icon route-icon-amber">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M10.8 5.7 15.1 10l-4.3 4.3" /></svg>
+        </div>
+        <div class="route-copy">
+          <h2>Via West End</h2>
+          <p class="route-subtext amber">Mid pressure — manageable</p>
+        </div>
+        <div class="route-meta muted">
+          <strong>18 min</strong>
+          <div class="pressure-bars" aria-label="Mid pressure">
+            <i class="bar amber h3"></i><i class="bar amber h4"></i><i class="bar amber h3"></i><i class="bar empty"></i><i class="bar empty"></i>
+          </div>
+        </div>
+      </article>
+
+      <article class="route-card route-card-avoid">
+        <div class="route-icon route-icon-red">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 5.5 14.5 14.5M14.5 5.5 5.5 14.5" /></svg>
+        </div>
+        <div class="route-copy">
+          <h2>Through South Bank</h2>
+          <p class="route-subtext red">Very crowded — avoid now</p>
+        </div>
+        <div class="route-meta muted">
+          <strong>—</strong>
+          <div class="pressure-bars" aria-label="High pressure">
+            <i class="bar red h5"></i><i class="bar red h5"></i><i class="bar red h5"></i><i class="bar red h5"></i><i class="bar red h5"></i>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="forecast-card" aria-label="South Bank pressure forecast">
+      <p>South Bank pressure — next 2.5 hrs</p>
+      <div class="forecast-bars">
+        <div><i class="forecast-bar amber now"></i><span>Now</span></div>
+        <div><i class="forecast-bar orange plus-30"></i><span>+30m</span></div>
+        <div><i class="forecast-bar red plus-1"></i><span>+1hr</span></div>
+        <div><i class="forecast-bar red plus-15"></i><span>+1.5hr</span></div>
+        <div><i class="forecast-bar orange plus-2"></i><span>+2hr</span></div>
+        <div><i class="forecast-bar green plus-25"></i><span>+2.5hr</span></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
