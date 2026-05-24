@@ -15,7 +15,7 @@
 .live-event-006 { width:5px;height:5px;border-radius:50%;background:#E2631A;animation:alert-blink 1.2s ease-in-out infinite; }
 .live-event-007 { display:flex;align-items:center;gap:6px; }
 .live-event-008 { background:#E1F5EE;border-radius:20px;padding:2px 8px;font-size:10px;font-weight:500;color:#0F6E56; }
-.live-event-009 { width:28px;height:28px;border-radius:50%;border:0.5px solid var(--color-border-tertiary);display:flex;align-items:center;justify-content:center; }
+.live-event-009 { width:28px;height:28px;border-radius:50%;border:0.5px solid var(--color-border-tertiary);background:transparent;color:var(--color-text-secondary);display:flex;align-items:center;justify-content:center; }
 .live-event-010 { margin:10px 12px 0;background:#FFF3ED;border-radius:var(--border-radius-md);border-left:3px solid #E2631A;padding:10px 12px;animation:slide-down 0.4s ease both; }
 .live-event-011 { display:flex;align-items:flex-start;justify-content:space-between;gap:8px; }
 .live-event-012 { display:flex;align-items:center;gap:6px;margin-bottom:3px; }
@@ -508,6 +508,35 @@ body {
   margin-top: 5px;
   font-size: 12.2px;
   line-height: 1.38;
+}
+
+.live-event-045 {
+  width: 100%;
+  appearance: none;
+  border-style: solid;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    filter 150ms ease,
+    transform 150ms ease;
+}
+
+.live-event-045:hover {
+  filter: brightness(1.07);
+}
+
+.live-event-045:active {
+  transform: scale(0.985);
+}
+
+.live-event-045:focus-visible {
+  outline: 2px solid rgba(93, 202, 165, 0.75);
+  outline-offset: 3px;
 }
 
 .live-event-016 svg > text,

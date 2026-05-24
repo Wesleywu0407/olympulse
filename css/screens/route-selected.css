@@ -803,3 +803,25 @@ body {
   font-size: 11.5px;
   line-height: 1.25;
 }
+
+.start-button {
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    filter 150ms ease,
+    transform 150ms ease;
+}
+
+.start-button:hover {
+  filter: brightness(1.07);
+}
+
+.start-button:active {
+  transform: scale(0.98);
+}
+
+.start-button:focus-visible {
+  outline: 2px solid rgba(93, 202, 165, 0.75);
+  outline-offset: 3px;
+}

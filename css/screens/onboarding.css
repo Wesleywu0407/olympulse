@@ -32,6 +32,12 @@ body {
   color: var(--ink);
 }
 
+.onboarding-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .top-label {
   color: #8b837b;
   font-size: 11px;
@@ -422,4 +428,24 @@ body {
   font-size: 15.5px;
   font-weight: 840;
   line-height: 1;
+}
+
+.identity-card,
+.continue-button {
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    filter 150ms ease,
+    transform 150ms ease;
+}
+
+.identity-card:hover,
+.continue-button:not(:disabled):hover {
+  filter: brightness(1.07);
+}
+
+.identity-card:active,
+.continue-button:not(:disabled):active {
+  transform: scale(0.98);
 }

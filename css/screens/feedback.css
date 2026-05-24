@@ -379,6 +379,32 @@ body {
   box-shadow: 0 14px 28px rgba(36, 149, 111, 0.2);
 }
 
+.tag,
+.share-button {
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    filter 150ms ease,
+    transform 150ms ease;
+}
+
+.tag:hover,
+.share-button:hover {
+  filter: brightness(1.07);
+}
+
+.tag:active,
+.share-button:active {
+  transform: scale(0.98);
+}
+
+.tag:focus-visible,
+.share-button:focus-visible {
+  outline: 2px solid rgba(93, 202, 165, 0.75);
+  outline-offset: 3px;
+}
+
 .stats-strip {
   min-height: 72px;
   border: 1px solid var(--premium-border);

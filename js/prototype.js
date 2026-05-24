@@ -74,6 +74,58 @@
     }, 180);
   }
 
+  function storedTheme() {
+    const requestedTheme = new URLSearchParams(window.location.search).get("theme");
+    if (requestedTheme === "light" || requestedTheme === "dark") return requestedTheme;
+
+    try {
+      return window.localStorage.getItem("olym-theme");
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function saveTheme(theme) {
+    try {
+      window.localStorage.setItem("olym-theme", theme);
+    } catch (error) {
+      // Theme still works for this page even when storage is unavailable.
+    }
+  }
+
+  function themeIcon(isLight) {
+    if (isLight) {
+      return '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M14.4 13.3A5.8 5.8 0 0 1 6.7 5.6 6.3 6.3 0 1 0 14.4 13.3Z"/></svg>';
+    }
+
+    return '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3.3v2M10 14.7v2M4.8 4.8l1.4 1.4M13.8 13.8l1.4 1.4M3.3 10h2M14.7 10h2M4.8 15.2l1.4-1.4M13.8 6.2l1.4-1.4"/><circle cx="10" cy="10" r="2.7"/></svg>';
+  }
+
+  function applyTheme(isLight) {
+    document.documentElement.classList.toggle("light-mode", isLight);
+    document.body.classList.toggle("light-mode", isLight);
+    document.querySelectorAll(".theme-toggle, .settings-button, .live-event-009").forEach((button) => {
+      button.classList.add("theme-toggle");
+      button.innerHTML = themeIcon(isLight);
+      button.setAttribute("title", isLight ? "Switch to dark mode" : "Switch to light mode");
+      button.setAttribute("aria-label", isLight ? "Switch to dark mode" : "Switch to light mode");
+      if (!button.getAttribute("type") && button.tagName === "BUTTON") button.type = "button";
+    });
+  }
+
+  function installThemeToggle() {
+    applyTheme(storedTheme() === "light");
+
+    document.addEventListener("click", (event) => {
+      const button = event.target.closest(".theme-toggle, .settings-button, .live-event-009");
+      if (!button) return;
+      event.preventDefault();
+      const isLight = !document.body.classList.contains("light-mode");
+      applyTheme(isLight);
+      saveTheme(isLight ? "light" : "dark");
+    });
+  }
+
   function icon(name) {
     const icons = {
       onboarding:
@@ -160,10 +212,42 @@
 
   function wireStoryFlow() {
     document.addEventListener("click", (event) => {
+      const routeOption = event.target.closest("[data-route-option]");
+      if (routeOption) {
+        event.preventDefault();
+        selectRouteOption(routeOption);
+        return;
+      }
+
       const target = event.target.closest("[data-next-screen]");
       if (!target) return;
       event.preventDefault();
       navigateTo(target.dataset.nextScreen);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+
+      const routeOption = event.target.closest("[data-route-option]");
+      if (routeOption) {
+        event.preventDefault();
+        selectRouteOption(routeOption);
+        return;
+      }
+
+      const target = event.target.closest("[data-next-screen]");
+      if (!target && !routeOption) return;
+      event.preventDefault();
+      if (target) navigateTo(target.dataset.nextScreen);
+    });
+  }
+
+  function selectRouteOption(selected) {
+    const group = selected.closest("[role='radiogroup']") || document;
+    group.querySelectorAll("[data-route-option]").forEach((option) => {
+      const isSelected = option === selected;
+      option.classList.toggle("is-selected", isSelected);
+      option.setAttribute("aria-checked", String(isSelected));
     });
   }
 
@@ -185,6 +269,10 @@
 
   installPromptBridge();
   wireStoryFlow();
+  applyTheme(storedTheme() === "light");
 
-  document.addEventListener("DOMContentLoaded", addNav);
+  document.addEventListener("DOMContentLoaded", () => {
+    installThemeToggle();
+    addNav();
+  });
 })();

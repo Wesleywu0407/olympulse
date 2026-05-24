@@ -580,3 +580,34 @@ body {
 .bottom-nav a.active {
   font-weight: 820;
 }
+
+.route-options .route-card,
+.bottom-nav a,
+.bottom-nav button {
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    color 150ms ease,
+    filter 150ms ease,
+    transform 150ms ease;
+}
+
+.route-options .route-card:hover,
+.bottom-nav a:hover,
+.bottom-nav button:hover {
+  filter: brightness(1.07);
+}
+
+.route-options .route-card:active,
+.bottom-nav a:active,
+.bottom-nav button:active {
+  transform: scale(0.98);
+}
+
+.route-options .route-card:focus-visible,
+.bottom-nav a:focus-visible,
+.bottom-nav button:focus-visible {
+  outline: 2px solid rgba(93, 202, 165, 0.75);
+  outline-offset: 3px;
+}

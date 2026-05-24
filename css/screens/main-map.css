@@ -157,12 +157,33 @@ body {
   background: #ffffff;
   color: #8b847b;
   font-size: 13px;
+  cursor: text;
+}
+
+.search-card:focus-within {
+  border-color: var(--green);
 }
 
 .search-card svg {
   width: 16px;
   height: 16px;
   color: #8b847b;
+}
+
+.search-input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: 1;
+}
+
+.search-input::placeholder {
+  color: currentColor;
+  opacity: 1;
 }
 
 .map-card {
@@ -301,6 +322,18 @@ body {
 
 .route-card-best {
   border: 1.5px solid var(--green);
+}
+
+.route-card.is-selected {
+  border-color: var(--green);
+  background: color-mix(in srgb, var(--green) 12%, var(--map-card));
+  box-shadow:
+    0 0 0 1px rgba(29, 184, 122, 0.1),
+    0 16px 34px rgba(29, 184, 122, 0.12);
+}
+
+.route-card.is-selected .route-icon {
+  filter: brightness(1.08);
 }
 
 .route-card-mid {
@@ -1007,4 +1040,27 @@ body {
   font-weight: 830;
   line-height: 1.15;
   letter-spacing: 0;
+}
+
+.route-card {
+  cursor: pointer;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    filter 150ms ease,
+    transform 150ms ease;
+}
+
+.route-card:hover {
+  filter: brightness(1.07);
+}
+
+.route-card:active {
+  transform: scale(0.985);
+}
+
+.route-card:focus-visible {
+  outline: 2px solid rgba(93, 202, 165, 0.75);
+  outline-offset: 3px;
 }

@@ -794,3 +794,29 @@ body {
 .new-route-pill text {
   letter-spacing: 0;
 }
+
+.primary-action,
+.secondary-action {
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    filter 150ms ease,
+    transform 150ms ease;
+}
+
+.primary-action:hover,
+.secondary-action:hover {
+  filter: brightness(1.07);
+}
+
+.primary-action:active,
+.secondary-action:active {
+  transform: scale(0.98);
+}
+
+.primary-action:focus-visible,
+.secondary-action:focus-visible {
+  outline: 2px solid rgba(93, 202, 165, 0.75);
+  outline-offset: 3px;
+}

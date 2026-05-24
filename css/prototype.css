@@ -118,6 +118,53 @@ input {
   font: inherit;
 }
 
+.theme-toggle,
+.settings-button {
+  appearance: none;
+  cursor: pointer;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease,
+    filter 150ms ease,
+    transform 150ms ease;
+}
+
+.theme-toggle:hover,
+.settings-button:hover {
+  filter: brightness(1.08);
+  transform: rotate(20deg);
+}
+
+.theme-toggle:active,
+.settings-button:active {
+  transform: scale(0.97);
+}
+
+.theme-toggle:focus-visible,
+.settings-button:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--color-calm) 70%, white);
+  outline-offset: 3px;
+}
+
+.settings-button svg,
+.theme-toggle svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+.settings-button path,
+.settings-button circle,
+.theme-toggle path,
+.theme-toggle circle {
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
 button,
 [role="button"],
 .olympulse-bottom-nav__item {
@@ -851,6 +898,86 @@ button {
 
 .olympulse-bottom-nav__item.is-event-active {
   color: #e2631a;
+}
+
+/* Shared tap feedback for prototype controls */
+.button,
+.primary-action,
+.secondary-action,
+.start-button,
+.share-button,
+.continue-button,
+.route-card,
+.identity-card,
+.tag,
+.live-event-045,
+.bottom-nav a,
+.bottom-nav button,
+.nav button,
+.olympulse-bottom-nav__item {
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    color 150ms ease,
+    filter 150ms ease,
+    opacity 150ms ease,
+    transform 150ms ease;
+}
+
+.button:not(:disabled):hover,
+.primary-action:not(:disabled):hover,
+.start-button:not(:disabled):hover,
+.share-button:not(:disabled):hover,
+.continue-button:not(:disabled):hover {
+  filter: brightness(1.08);
+}
+
+.secondary-action:not(:disabled):hover,
+.route-card:hover,
+.identity-card:hover,
+.tag:not(:disabled):hover,
+.live-event-045:hover,
+.bottom-nav a:hover,
+.bottom-nav button:hover,
+.nav button:hover,
+.olympulse-bottom-nav__item:hover {
+  filter: brightness(1.07);
+}
+
+.button:not(:disabled):active,
+.primary-action:not(:disabled):active,
+.secondary-action:not(:disabled):active,
+.start-button:not(:disabled):active,
+.share-button:not(:disabled):active,
+.continue-button:not(:disabled):active,
+.route-card:active,
+.identity-card:active,
+.tag:not(:disabled):active,
+.live-event-045:active,
+.bottom-nav a:active,
+.bottom-nav button:active,
+.nav button:active,
+.olympulse-bottom-nav__item:active {
+  transform: scale(0.98);
+}
+
+.route-card:focus-visible,
+.identity-card:focus-visible,
+.tag:focus-visible,
+.live-event-045:focus-visible,
+.bottom-nav a:focus-visible,
+.bottom-nav button:focus-visible,
+.nav button:focus-visible,
+.olympulse-bottom-nav__item:focus-visible,
+.button:focus-visible,
+.primary-action:focus-visible,
+.secondary-action:focus-visible,
+.start-button:focus-visible,
+.share-button:focus-visible,
+.continue-button:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--color-calm) 70%, white);
+  outline-offset: 3px;
 }
 
 .olympulse-bottom-nav__item svg * {

@@ -3,17 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OlymPulse Prototype</title>
+  <title>BrisPulse Prototype</title>
   <link rel="stylesheet" href="css/prototype.css">
   <link rel="stylesheet" href="css/index.css">
+  <script src="js/prototype.js" defer></script>
+  <link rel="stylesheet" href="css/dark-theme.css">
 </head>
 <body>
-  <main class="app" aria-label="OlymPulse mobile app prototype">
+  <main class="app" aria-label="BrisPulse mobile app prototype">
     <div class="screens">
       <section class="screen screen-home active" data-screen="map">
         <header class="header app-header">
-          <div class="brand"><span class="brand-dot"></span><span>OlymPulse</span></div>
-          <span class="status-pill">South Bank is tense</span>
+          <div class="brand"><span class="brand-dot"></span><span>BrisPulse</span></div>
+          <div class="header-actions">
+            <span class="status-pill">South Bank is tense</span>
+            <button class="settings-button theme-toggle" type="button" aria-label="Switch to light mode" title="Switch to light mode">
+              <svg viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M10 3.3v2M10 14.7v2M4.8 4.8l1.4 1.4M13.8 13.8l1.4 1.4M3.3 10h2M14.7 10h2M4.8 15.2l1.4-1.4M13.8 6.2l1.4-1.4" />
+                <circle cx="10" cy="10" r="2.7" />
+              </svg>
+            </button>
+          </div>
         </header>
 
         <section class="map-card map-card--hero" aria-label="Brisbane pressure map">
@@ -85,7 +95,7 @@
             <span class="route-copy"><span class="route-heading"><span class="card-title">Comfortable</span><span class="recommendation-chip">Recommended</span></span><span class="text-calm caption">18 min · calmer via West End</span></span>
             <span class="route-meta"><strong>18 min</strong><span class="pressure-bars"><b class="bar--calm bar-height--1"></b><b class="bar--calm bar-height--2"></b><b class="bar--calm bar-height--1"></b><b class="bar--mid bar-height--2"></b><b class="bar-height--3"></b></span></span>
           </button>
-          <div class="route-card"><span class="route-icon route-icon--calm"><svg viewBox="0 0 20 20"><path d="M5.5 10.5 8.7 13.7 14.8 6.8"/></svg></span><span class="route-copy"><span class="card-title">Least crowded</span><span class="text-calm caption">22 min · quietest streets</span></span><span class="route-meta"><strong>22 min</strong><span class="pressure-bars"><b class="bar--calm bar-height--1"></b><b class="bar--calm bar-height--1"></b><b class="bar-height--3"></b><b class="bar-height--3"></b><b class="bar-height--3"></b></span></span></div>
+          <button class="route-card" type="button"><span class="route-icon route-icon--calm"><svg viewBox="0 0 20 20"><path d="M5.5 10.5 8.7 13.7 14.8 6.8"/></svg></span><span class="route-copy"><span class="card-title">Least crowded</span><span class="text-calm caption">22 min · quietest streets</span></span><span class="route-meta"><strong>22 min</strong><span class="pressure-bars"><b class="bar--calm bar-height--1"></b><b class="bar--calm bar-height--1"></b><b class="bar-height--3"></b><b class="bar-height--3"></b><b class="bar-height--3"></b></span></span></button>
         </div>
       </section>
     </div>

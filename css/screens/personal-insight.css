@@ -6,6 +6,7 @@
 
 .personal-insight-001 { padding:10px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:0.5px solid var(--color-border-tertiary); }
 .personal-insight-002 { display:flex;align-items:center;gap:8px; }
+.personal-insight-actions { display:flex;align-items:center;gap:8px; }
 .personal-insight-003 { width:7px;height:7px;border-radius:50%;background:#1D9E75;animation:live-blink 2s ease-in-out infinite; }
 .personal-insight-004 { font-size:13px;font-weight:500;color:var(--color-text-primary); }
 .personal-insight-005 { background:#E1F5EE;border-radius:20px;padding:2px 8px;font-size:10px;font-weight:500;color:#0F6E56; }
