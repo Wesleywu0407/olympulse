@@ -4,10 +4,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OlymPulse Insights</title>
+<title>BrisPulse Insights</title>
 <link rel="stylesheet" href="css/prototype.css">
 <script src="js/prototype.js" defer></script>
 <link rel="stylesheet" href="css/screens/personal-insight.css">
+<link rel="stylesheet" href="css/dark-theme.css">
 </head>
 <body data-screen="insight">
 
@@ -15,7 +16,7 @@
   <div class="personal-insight-001">
     <div class="personal-insight-002">
       <div class="personal-insight-003"></div>
-      <span class="personal-insight-004">OlymPulse</span>
+      <span class="personal-insight-004">BrisPulse</span>
       <div class="personal-insight-005">Local</div>
     </div>
     <span class="personal-insight-006">Your insights</span>
@@ -90,7 +91,7 @@
 
       <div class="personal-insight-031">
         <div class="personal-insight-032">
-          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="5.5" stroke="#0F6E56" stroke-width="1.2" fill="none"/><path d="M7.5 4.5v3l2 1.5" stroke="#0F6E56" stroke-width="1.2" stroke-linecap="round"/></svg>
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="5.5" stroke="#5DCAA5" stroke-width="1.2" fill="none"/><path d="M7.5 4.5v3l2 1.5" stroke="#5DCAA5" stroke-width="1.2" stroke-linecap="round"/></svg>
         </div>
         <div>
           <p class="personal-insight-006">Best time to leave</p>
@@ -100,7 +101,7 @@
 
       <div class="personal-insight-031">
         <div class="personal-insight-034">
-          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 2L7.5 13M2 7.5h11" stroke="#993C1D" stroke-width="1.2" stroke-linecap="round"/></svg>
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 2L7.5 13M2 7.5h11" stroke="#E24B4A" stroke-width="1.2" stroke-linecap="round"/></svg>
         </div>
         <div>
           <p class="personal-insight-006">Your pressure hotspot</p>
@@ -110,7 +111,7 @@
 
       <div class="personal-insight-031">
         <div class="personal-insight-036">
-          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 11l3-3 2.5 2.5L12 4" stroke="#185FA5" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 11l3-3 2.5 2.5L12 4" stroke="#EF9F27" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <div>
           <p class="personal-insight-006">Compared to last week</p>
@@ -131,13 +132,40 @@
         <p class="personal-insight-041">7 reports shared · helped 1,240 locals</p>
       </div>
       <div class="personal-insight-042">
-        <svg width="44" height="44" viewBox="0 0 44 44">
-          <circle cx="22" cy="22" r="16" fill="none" stroke="var(--color-border-tertiary)" stroke-width="3"/>
-          <circle cx="22" cy="22" r="16" fill="none" stroke="#1D9E75" stroke-width="3" stroke-linecap="round"
-            stroke-dasharray="100" stroke-dashoffset="28" transform="rotate(-90 22 22)"/>
-          <text x="22" y="26" text-anchor="middle" font-size="11" font-weight="500" fill="#0F6E56">72%</text>
-        </svg>
-        <p class="personal-insight-022">accuracy</p>
+        <div class="accuracy-ring" style="position:relative;width:80px;height:80px;">
+          <svg width="80" height="80" viewBox="0 0 80 80">
+            <!-- background track -->
+            <circle
+              cx="40" cy="40" r="30"
+              fill="none"
+              stroke="rgba(255,255,255,0.08)"
+              stroke-width="5"
+            />
+            <!-- teal progress arc: 72% of full circle -->
+            <!-- circumference = 2 * π * 30 = 188.5 -->
+            <!-- 72% = 135.7, gap = 52.8 -->
+            <g transform="rotate(-90 40 40)">
+              <circle
+                cx="40" cy="40" r="30"
+                fill="none"
+                stroke="#1D9E75"
+                stroke-width="5"
+                stroke-linecap="round"
+                stroke-dasharray="135.7 52.8"
+                stroke-dashoffset="47.1"
+              />
+            </g>
+          </svg>
+          <!-- centre text -->
+          <div style="
+            position:absolute;inset:0;
+            display:flex;flex-direction:column;
+            align-items:center;justify-content:center;
+          ">
+            <span style="font-family:'DM Mono',monospace;font-size:15px;font-weight:700;color:#eef2f7;line-height:1;">72%</span>
+          </div>
+        </div>
+        <div style="font-size:11px;color:#8a9bb0;margin-top:4px;text-align:center;">accuracy</div>
       </div>
     </div>
   </div>
