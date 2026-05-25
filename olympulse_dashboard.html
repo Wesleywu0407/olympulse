@@ -22,7 +22,19 @@
       </div>
     </header>
 
+    <!-- Live pressure strip -->
+    <div style="display:flex;gap:8px;padding:0 16px 4px;overflow-x:auto;scrollbar-width:none;">
+      <div style="flex-shrink:0;padding:7px 12px;background:rgba(226,75,74,0.12);border:1px solid rgba(226,75,74,0.3);border-radius:20px;font-size:12px;color:#E24B4A;white-space:nowrap;">🔴 South Bank · Surge</div>
+      <div style="flex-shrink:0;padding:7px 12px;background:rgba(239,159,39,0.12);border:1px solid rgba(239,159,39,0.3);border-radius:20px;font-size:12px;color:#EF9F27;white-space:nowrap;">🟡 Roma St · Building</div>
+      <div style="flex-shrink:0;padding:7px 12px;background:rgba(29,158,117,0.12);border:1px solid rgba(29,158,117,0.3);border-radius:20px;font-size:12px;color:#5DCAA5;white-space:nowrap;">🟢 West End · Calm</div>
+      <div style="flex-shrink:0;padding:7px 12px;background:rgba(239,159,39,0.12);border:1px solid rgba(239,159,39,0.3);border-radius:20px;font-size:12px;color:#EF9F27;white-space:nowrap;">🟡 Gabba · Busy</div>
+    </div>
+
     <section class="dashboard-actions" aria-label="Decision support actions">
+
+      <!-- Primary actions -->
+      <p style="padding:4px 4px 8px;font-size:11px;font-weight:700;letter-spacing:0.1em;color:#4d6070;text-transform:uppercase;">Navigate</p>
+
       <button class="after-choice after-row" type="button" data-next-screen="map">
         <span class="after-icon after-icon--pressure" aria-hidden="true">📍</span>
         <span>
@@ -44,20 +56,39 @@
           <span class="after-meta">Why this route is suggested</span>
         </span>
       </button>
-      <button class="after-choice after-row" type="button" data-next-screen="map">
-        <span class="after-icon after-icon--choose" aria-hidden="true">✓</span>
+      <button class="after-choice after-row" type="button" data-next-screen="liveReroute">
+        <span class="after-icon" aria-hidden="true">🔄</span>
         <span>
-          <strong class="after-title">Choose your path</strong>
-          <span class="after-meta">Based on your priority</span>
+          <strong class="after-title">Live reroute alert</strong>
+          <span class="after-meta">Surge detected · new path available</span>
+        </span>
+      </button>
+
+      <!-- Event & community section -->
+      <p style="padding:12px 4px 8px;font-size:11px;font-weight:700;letter-spacing:0.1em;color:#4d6070;text-transform:uppercase;">Event &amp; Community</p>
+
+      <button class="after-choice after-row" type="button" data-next-screen="event">
+        <span class="after-icon" aria-hidden="true">⭐</span>
+        <span>
+          <strong class="after-title">Live event mode</strong>
+          <span class="after-meta">Athletics · Suncorp · 9:30 PM tonight</span>
         </span>
       </button>
       <button class="after-choice after-row" type="button" data-next-screen="feedback">
         <span class="after-icon after-icon--feedback" aria-hidden="true">💬</span>
         <span>
           <strong class="after-title">Submit how it feels</strong>
-          <span class="after-meta">Anonymous · 1 tap</span>
+          <span class="after-meta">Anonymous · 1 tap · helps everyone</span>
         </span>
       </button>
+      <button class="after-choice after-row" type="button" data-next-screen="insight">
+        <span class="after-icon" aria-hidden="true">📊</span>
+        <span>
+          <strong class="after-title">Your personal insights</strong>
+          <span class="after-meta">42 min saved this week · 5 detours</span>
+        </span>
+      </button>
+
     </section>
   </main>
   <nav class="olympulse-bottom-nav static-nav" aria-label="Prototype navigation">
