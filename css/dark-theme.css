@@ -965,3 +965,36 @@ body.light-mode .bar.empty {
   background: transparent !important;
   outline: none;
 }
+
+/* Delivery settings button — standalone styles, not inheriting .settings-button */
+.delivery-settings-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.07);
+  color: #8a9bb0;
+  cursor: pointer;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+.delivery-settings-btn svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+.delivery-settings-btn path {
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  fill: none;
+}
+.delivery-settings-btn circle {
+  fill: currentColor;
+  stroke: none;
+}
+.delivery-settings-btn:hover { background: rgba(255,255,255,0.12); }
+.delivery-settings-btn:active { background: rgba(255,255,255,0.07); }
