@@ -950,11 +950,18 @@ body.light-mode .bar.empty {
   color: #1D9E75 !important;
 }
 
-/* Settings (delivery) button */
+/* Settings (delivery) button — never changes colour */
 .delivery-settings-btn {
-  opacity: 0.65;
+  opacity: 0.6;
   transition: opacity 150ms ease;
+  color: #8a9bb0 !important;
 }
 .delivery-settings-btn:hover {
   opacity: 1;
+}
+.delivery-settings-btn:active,
+.delivery-settings-btn:focus {
+  color: #8a9bb0 !important;
+  background: transparent !important;
+  outline: none;
 }
