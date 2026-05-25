@@ -8,9 +8,10 @@
 <script src="js/prototype.js" defer></script>
 <link rel="stylesheet" href="css/screens/feedback.css">
 <link rel="stylesheet" href="css/dark-theme.css">
+<link rel="stylesheet" href="css/screens/after-content.css">
 </head>
 <body data-screen="feedback">
-  <main class="arrival-screen" aria-label="BrisPulse arrival feedback">
+  <main class="arrival-screen after-screen" aria-label="BrisPulse arrival feedback">
     <header class="app-header">
       <div class="brand">
         <span class="brand-dot" aria-hidden="true"></span>
@@ -28,61 +29,78 @@
       </div>
     </header>
 
-    <section class="success-moment" aria-label="Arrival success">
-      <div class="success-check" aria-hidden="true">
-        <svg viewBox="0 0 24 24">
-          <path d="M5 12.4 9.5 16.9 19 7.4" />
+    <!-- Success moment -->
+    <section aria-label="Journey complete" style="display:flex;flex-direction:column;align-items:center;padding:28px 16px 16px;text-align:center;">
+      <div style="width:56px;height:56px;background:#1D9E75;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <path d="M6 14.5l5.5 5.5L22 9" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
-      <h1>You made it</h1>
-      <p>Via West End · 19 min · avoided South Bank</p>
-    </section>
-
-    <section class="feedback-card" aria-label="Trip feedback">
-      <h2>How did the city feel?</h2>
-      <p class="feedback-subtitle">Your experience helps other locals plan better.</p>
-
-      <div class="emoji-row" aria-hidden="true">
-        <span>😊</span>
-        <span>😰</span>
-      </div>
-
-      <input class="feeling-slider" type="range" min="0" max="100" value="35" id="feel-slider" aria-label="City pressure feeling" />
-
-      <div class="mood-wrap">
-        <span class="mood-pill" id="feel-label">Calm — manageable</span>
-      </div>
-
-      <div class="tag-section">
-        <p>What did you notice? <span>(optional)</span></p>
-        <div class="tag-grid" id="tags">
-          <button class="tag" type="button">Too crowded</button>
-          <button class="tag" type="button">Hard to walk</button>
-          <button class="tag" type="button">Good signage</button>
-          <button class="tag active" type="button">Felt safe</button>
-          <button class="tag" type="button">Confusing exits</button>
-          <button class="tag" type="button">Smooth flow</button>
+      <h1 style="font-size:22px;font-weight:700;color:#eef2f7;margin:0 0 6px;">You made it</h1>
+      <p style="font-size:13px;color:#8a9bb0;margin:0 0 18px;">Via West End · 19 min · avoided South Bank</p>
+      <!-- Stats strip -->
+      <div style="display:flex;gap:0;background:#1a2840;border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;width:100%;">
+        <div style="flex:1;padding:12px 8px;text-align:center;border-right:1px solid rgba(255,255,255,0.08);">
+          <div style="font-size:16px;font-weight:700;color:#eef2f7;">19 min</div>
+          <div style="font-size:10px;color:#8a9bb0;margin-top:2px;">taken</div>
+        </div>
+        <div style="flex:1;padding:12px 8px;text-align:center;border-right:1px solid rgba(255,255,255,0.08);">
+          <div style="font-size:16px;font-weight:700;color:#1D9E75;">42 min</div>
+          <div style="font-size:10px;color:#8a9bb0;margin-top:2px;">saved</div>
+        </div>
+        <div style="flex:1;padding:12px 8px;text-align:center;">
+          <div style="font-size:16px;font-weight:700;color:#eef2f7;">1</div>
+          <div style="font-size:10px;color:#8a9bb0;margin-top:2px;">crowd avoided</div>
         </div>
       </div>
     </section>
 
-    <section class="share-section">
-      <button class="share-button" id="feedback-submit" type="button">Share with community ↗</button>
-      <p>Anonymous · helps 1,240 locals nearby</p>
-    </section>
-
-    <section class="stats-strip" aria-label="Trip stats">
-      <div>
-        <strong>19</strong>
-        <span>min taken</span>
-      </div>
-      <div>
-        <strong class="green">42</strong>
-        <span>min saved</span>
-      </div>
-      <div>
-        <strong>1</strong>
-        <span>crowd avoided</span>
+    <section class="after-section" aria-label="Place feedback">
+      <div class="after-card">
+        <article class="after-row">
+          <div>
+            <h1 class="after-title">How does it feel here?</h1>
+            <p class="after-meta">Anonymous · 1 tap · helps everyone</p>
+          </div>
+        </article>
+        <div class="after-row">
+          <div class="after-feedback-grid">
+            <button class="after-feedback-btn" type="button">
+              <span aria-hidden="true">😌</span>
+              Comfortable
+            </button>
+            <button class="after-feedback-btn" type="button">
+              <span aria-hidden="true">😅</span>
+              Busy
+            </button>
+            <button class="after-feedback-btn" type="button">
+              <span aria-hidden="true">😰</span>
+              Overwhelm
+            </button>
+          </div>
+        </div>
+        <div class="after-report-count">127 people reported · last 10 min</div>
+        <article class="after-row">
+          <span class="after-icon" aria-hidden="true">😅</span>
+          <div>
+            <h2 class="after-title">Busy</h2>
+          </div>
+          <span class="after-meta">64 reports</span>
+        </article>
+        <article class="after-row">
+          <span class="after-icon" aria-hidden="true">😌</span>
+          <div>
+            <h2 class="after-title">Comfortable</h2>
+          </div>
+          <span class="after-meta">41</span>
+        </article>
+        <article class="after-row">
+          <span class="after-icon" aria-hidden="true">😰</span>
+          <div>
+            <h2 class="after-title">Overwhelming</h2>
+          </div>
+          <span class="after-meta">22</span>
+        </article>
       </div>
     </section>
   </main>

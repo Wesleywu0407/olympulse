@@ -1,4 +1,4 @@
-let chosen = 'local';
+let chosen = 'event-goer';
 
 function selectIdentity(id) {
   chosen = id;
@@ -6,6 +6,7 @@ function selectIdentity(id) {
   document.querySelectorAll('.identity-card').forEach((card) => {
     const isSelected = card.dataset.identity === id;
     card.classList.toggle('selected', isSelected);
+    card.classList.toggle('is-selected', isSelected);
     card.setAttribute('aria-pressed', String(isSelected));
   });
 
@@ -15,7 +16,7 @@ function selectIdentity(id) {
 
 function proceed() {
   if (!chosen) return;
-  sendPrompt('I selected ' + chosen + '. Continue to the main map.');
+  sendPrompt('I selected ' + chosen + '. Continue to dashboard.');
 }
 
 window.addEventListener('DOMContentLoaded', () => {

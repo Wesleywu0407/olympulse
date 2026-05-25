@@ -8,125 +8,67 @@
 <script src="js/prototype.js" defer></script>
 <link rel="stylesheet" href="css/screens/route-selected.css">
 <link rel="stylesheet" href="css/dark-theme.css">
+<link rel="stylesheet" href="css/screens/after-content.css">
 </head>
-<body data-screen="map">
-  <main class="route-selected-screen" aria-label="Selected BrisPulse route">
+<body data-screen="routeSelected">
+  <main class="route-selected-screen route-result-screen after-screen" aria-label="Selected BrisPulse route">
+    <div class="after-statusbar" aria-hidden="true">
+      <span>9:43</span>
+      <span class="after-phone-icons">
+        <i></i><i></i><i></i>
+        <b></b>
+      </span>
+    </div>
+
     <header class="app-header">
       <div class="brand">
         <span class="brand-dot" aria-hidden="true"></span>
         <span>BrisPulse</span>
+        <span class="after-subtitle">Balanced · South Bank</span>
       </div>
-      <div class="header-actions">
-        <span class="identity-pill">Local</span>
-        <button class="settings-button theme-toggle" type="button" aria-label="Switch to light mode" title="Switch to light mode">
-          <svg viewBox="0 0 20 20" aria-hidden="true">
-            <path d="M10 3.3v2M10 14.7v2M4.8 4.8l1.4 1.4M13.8 13.8l1.4 1.4M3.3 10h2M14.7 10h2M4.8 15.2l1.4-1.4M13.8 6.2l1.4-1.4" />
-            <circle cx="10" cy="10" r="2.7" />
-          </svg>
-        </button>
-      </div>
+      <span class="live-dot" aria-hidden="true"></span>
     </header>
-    <p class="destination-line">Navigating to South Bank Station</p>
 
-    <section class="route-map-card" aria-label="Protected route map">
-      <div class="protected-strip">
-        <svg viewBox="0 0 18 18" aria-hidden="true">
-          <path d="M9 2.4 14.2 4.6v3.5c0 3.2-2.1 6-5.2 7.3-3.1-1.3-5.2-4.1-5.2-7.3V4.6L9 2.4Z" />
-          <path d="M6.3 8.7 8.2 10.6 11.8 6.9" />
-        </svg>
-        <span>Your route is protected — avoiding South Bank crowds</span>
+    <section class="after-section route-result-card" aria-label="Route result">
+      <div class="after-card">
+        <article class="route-result-heading">
+          <h1 class="after-title">South Bank → Roma St</h1>
+          <p class="after-meta">via Melbourne St · 15 min</p>
+        </article>
+        <div class="after-bar-stack" aria-label="Route quality metrics">
+          <div class="after-metric">
+            <span>Crowd</span>
+            <b class="after-meter after-meter--amber"><i></i></b>
+            <span>Mod</span>
+          </div>
+          <div class="after-metric">
+            <span>Comfort</span>
+            <b class="after-meter after-meter--green"><i></i></b>
+            <span>Good</span>
+          </div>
+          <div class="after-metric">
+            <span>Predictable</span>
+            <b class="after-meter after-meter--blue"><i></i></b>
+            <span>High</span>
+          </div>
+        </div>
       </div>
 
-      <svg class="route-map-svg" viewBox="0 0 351 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect width="351" height="160" rx="16" fill="#F8F6F0" />
-        <g stroke="#EDEAE2" stroke-linecap="round">
-          <path d="M18 42H333" stroke-width="4" />
-          <path d="M18 84H333" stroke-width="4" />
-          <path d="M18 123H333" stroke-width="5" />
-          <path d="M61 16V143" stroke-width="3" />
-          <path d="M126 14V148" stroke-width="4" />
-          <path d="M205 15V141" stroke-width="3" />
-          <path d="M280 18V138" stroke-width="3" />
-          <path d="M29 134C75 101 121 83 166 77C220 70 268 43 326 28" stroke-width="4" />
-        </g>
-        <path d="M-6 147C42 135 83 143 126 151C180 162 224 150 267 143C305 137 331 142 357 150" stroke="#C7E8F5" stroke-width="16" fill="none" stroke-linecap="round" />
-        <path d="M-6 147C42 135 83 143 126 151C180 162 224 150 267 143C305 137 331 142 357 150" stroke="#DDF2FA" stroke-width="8" fill="none" stroke-linecap="round" />
-
-        <g class="south-bank-halo">
-          <circle cx="213" cy="115" r="49" fill="#FF5032" opacity="0.07" />
-          <circle cx="213" cy="115" r="38" fill="#FF5032" opacity="0.10" />
-          <circle cx="213" cy="115" r="27" fill="#FF5032" opacity="0.14" />
-          <circle cx="213" cy="115" r="17" fill="#FF5032" opacity="0.20" />
-        </g>
-
-        <path class="selected-route" d="M82 49 C74 76 80 103 113 124" stroke="#1DB87A" stroke-width="3.2" stroke-dasharray="7 6" stroke-linecap="round" fill="none" />
-        <circle cx="82" cy="49" r="7.5" fill="#FFFFFF" stroke="#1DB87A" stroke-width="2" />
-        <circle class="you-dot" cx="82" cy="49" r="3.4" fill="#1DB87A" />
-        <circle cx="113" cy="124" r="5.2" fill="#FFFFFF" stroke="#1DB87A" stroke-width="1.7" />
-
-        <text x="82" y="37" text-anchor="middle">Roma St</text>
-        <text x="213" y="118" text-anchor="middle">South Bank</text>
-        <text x="113" y="139" text-anchor="middle">West End</text>
-      </svg>
-    </section>
-
-    <section class="summary-card" aria-label="Route summary">
-      <div>
-        <span>Via</span>
-        <strong>West End</strong>
-      </div>
-      <div>
-        <span>Time</span>
-        <strong class="time-value">14 min</strong>
-      </div>
-      <div>
-        <span>Pressure</span>
-        <strong class="pressure-value">
-          Low
-          <i class="mini-bars" aria-hidden="true"><b></b><b></b><b></b></i>
-        </strong>
-      </div>
-    </section>
-
-    <section class="why-section" aria-label="Why this route">
-      <p class="section-title">Why this route?</p>
-      <div class="insight-row">
-        <span class="insight-icon check" aria-hidden="true">
-          <svg viewBox="0 0 16 16"><path d="M3 8.2 6.3 11.5 13 4.7" /></svg>
-        </span>
-        <p>Avoids South Bank — 3x crowded right now</p>
-      </div>
-      <div class="insight-row">
-        <span class="insight-icon check" aria-hidden="true">
-          <svg viewBox="0 0 16 16"><path d="M3 8.2 6.3 11.5 13 4.7" /></svg>
-        </span>
-        <p>Your usual path — you know this route well</p>
-      </div>
-      <div class="insight-row">
-        <span class="insight-icon warn" aria-hidden="true">
-          <svg viewBox="0 0 16 16"><path d="M8 2.4 14 13H2L8 2.4Z" /><path d="M8 6.1v3.2M8 11.5h.01" /></svg>
-        </span>
-        <p>Via West End adds 4 min — but stress-free</p>
-      </div>
-    </section>
-
-    <section class="forecast-card compact" aria-label="South Bank travel pressure forecast">
-      <p>South Bank pressure while you travel</p>
-      <div class="forecast-bars">
-        <div><i class="forecast-bar amber now"></i><span>Now</span></div>
-        <div><i class="forecast-bar orange plus-30"></i><span>+30m</span></div>
-        <div><i class="forecast-bar red plus-1"></i><span>+1hr</span></div>
-        <div><i class="forecast-bar red plus-15"></i><span>+1.5hr</span></div>
-        <div><i class="forecast-bar orange plus-2"></i><span>+2hr</span></div>
-        <div><i class="forecast-bar green plus-25"></i><span>+2.5hr</span></div>
-      </div>
-      <span class="forecast-note">You'll arrive before the peak. Good timing.</span>
-    </section>
-
-    <section class="start-section">
-      <button class="start-button" type="button" data-next-screen="liveReroute">Start navigation</button>
-      <p>You can reroute anytime</p>
+      <aside class="after-callout">
+        <strong>Not in Google Maps / MyTranslink</strong>
+        <span>Crowd pressure · comfort trade-offs · event-specific explanations</span>
+      </aside>
     </section>
   </main>
+  <script>
+    // Fallback: ensure nav is always present on this screen
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!document.querySelector('.olympulse-bottom-nav')) {
+        if (window.olympulseAddNav) {
+          window.olympulseAddNav();
+        }
+      }
+    });
+  </script>
 </body>
 </html>

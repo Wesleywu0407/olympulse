@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BrisPulse Dashboard</title>
+<link rel="stylesheet" href="css/prototype.css">
+<script src="js/prototype.js" defer></script>
+<link rel="stylesheet" href="css/dark-theme.css">
+<link rel="stylesheet" href="css/screens/after-content.css">
+</head>
+<body data-screen="dashboard">
+  <main class="dashboard-screen after-screen" aria-label="BrisPulse decision support dashboard">
+    <header class="app-header">
+      <div class="brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>BrisPulse</span>
+        <span class="after-subtitle">What do you need?</span>
+      </div>
+      <div class="header-actions">
+        <span class="live-dot" aria-hidden="true"></span>
+      </div>
+    </header>
+
+    <section class="dashboard-actions" aria-label="Decision support actions">
+      <button class="after-choice after-row" type="button" data-next-screen="map">
+        <span class="after-icon after-icon--pressure" aria-hidden="true">📍</span>
+        <span>
+          <strong class="after-title">View precinct pressure</strong>
+          <span class="after-meta">See where it’s crowded now</span>
+        </span>
+      </button>
+      <button class="after-choice after-row" type="button" data-next-screen="map">
+        <span class="after-icon after-icon--map" aria-hidden="true">🗺</span>
+        <span>
+          <strong class="after-title">Compare route options</strong>
+          <span class="after-meta">Fastest, balanced, calmer</span>
+        </span>
+      </button>
+      <button class="after-choice after-row" type="button" data-next-screen="routeSelected">
+        <span class="after-icon" aria-hidden="true">⚖</span>
+        <span>
+          <strong class="after-title">Understand the trade-off</strong>
+          <span class="after-meta">Why this route is suggested</span>
+        </span>
+      </button>
+      <button class="after-choice after-row" type="button" data-next-screen="map">
+        <span class="after-icon after-icon--choose" aria-hidden="true">✓</span>
+        <span>
+          <strong class="after-title">Choose your path</strong>
+          <span class="after-meta">Based on your priority</span>
+        </span>
+      </button>
+      <button class="after-choice after-row" type="button" data-next-screen="feedback">
+        <span class="after-icon after-icon--feedback" aria-hidden="true">💬</span>
+        <span>
+          <strong class="after-title">Submit how it feels</strong>
+          <span class="after-meta">Anonymous · 1 tap</span>
+        </span>
+      </button>
+    </section>
+  </main>
+</body>
+</html>

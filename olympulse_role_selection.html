@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BrisPulse Onboarding</title>
+<title>BrisPulse Role Selection</title>
 <link rel="stylesheet" href="css/prototype.css">
 <script src="js/prototype.js" defer></script>
 <link rel="stylesheet" href="css/screens/onboarding.css">
@@ -11,12 +11,12 @@
 <link rel="stylesheet" href="css/screens/after-content.css">
 </head>
 <body data-screen="onboarding">
-  <main class="onboarding-screen after-screen" aria-label="Choose your BrisPulse identity">
+  <main class="role-selection-screen after-screen" aria-label="Select your BrisPulse role">
     <div class="onboarding-topbar">
       <div class="brand">
         <span class="brand-dot" aria-hidden="true"></span>
         <span>BrisPulse</span>
-        <span class="after-subtitle">Spatial Pressure</span>
+        <span class="after-subtitle">Who are you today?</span>
       </div>
       <button class="settings-button theme-toggle" type="button" aria-label="Switch to light mode" title="Switch to light mode">
         <svg viewBox="0 0 20 20" aria-hidden="true">
@@ -25,47 +25,6 @@
         </svg>
       </button>
     </div>
-
-    <section class="after-section" aria-labelledby="pressure-title">
-      <p class="after-kicker">Problem redefined</p>
-      <div class="after-card">
-        <article class="after-row">
-          <span class="after-icon" aria-hidden="true">•</span>
-          <div>
-            <h1 id="pressure-title" class="after-title">Spatial pressure =</h1>
-            <p class="after-meta">Crowd density plus lived uncertainty, control, and route disruption.</p>
-          </div>
-        </article>
-        <article class="after-row">
-          <div>
-            <h2 class="after-title">Crowd density</h2>
-          </div>
-          <span class="after-pill after-pill--green">Physical</span>
-        </article>
-        <article class="after-row">
-          <div>
-            <h2 class="after-title">Uncertainty</h2>
-          </div>
-          <span class="after-pill after-pill--amber">Experiential</span>
-        </article>
-        <article class="after-row">
-          <div>
-            <h2 class="after-title">Loss of control</h2>
-          </div>
-          <span class="after-pill after-pill--amber">Experiential</span>
-        </article>
-        <article class="after-row">
-          <div>
-            <h2 class="after-title">Route disruption</h2>
-          </div>
-          <span class="after-pill after-pill--red">Behavioural</span>
-        </article>
-      </div>
-      <aside class="after-callout">
-        <strong>Design focus: lived experience + user decisions</strong>
-        <span>Objective density does not fully explain discomfort.</span>
-      </aside>
-    </section>
 
     <section class="after-section identity-list" aria-label="Select your role">
       <p class="after-kicker">Select your role</p>
@@ -79,6 +38,7 @@
           <svg viewBox="0 0 16 16"><path d="M3.3 8.1 6.4 11.2 12.8 4.8" /></svg>
         </span>
       </button>
+
       <button class="after-choice after-row identity-card" id="c-resident" type="button" data-identity="resident">
         <span class="after-icon" aria-hidden="true">🏠</span>
         <span>
@@ -89,6 +49,7 @@
           <svg viewBox="0 0 16 16"><path d="M3.3 8.1 6.4 11.2 12.8 4.8" /></svg>
         </span>
       </button>
+
       <button class="after-choice after-row identity-card" id="c-commuter" type="button" data-identity="commuter">
         <span class="after-icon" aria-hidden="true">🚆</span>
         <span>

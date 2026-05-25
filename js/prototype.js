@@ -1,7 +1,7 @@
 (function () {
   const screens = {
     onboarding: {
-      file: "olympulse_onboarding.html",
+      file: "olympulse_role_selection.html",
       label: "Start",
       colorClass: "is-onboarding-active",
     },
@@ -26,7 +26,9 @@
   };
 
   const storyNext = {
-    onboarding: "map",
+    onboarding: "dashboard",
+    dashboard: "delivery",
+    delivery: "map",
     map: "event",
     event: "feedback",
     feedback: "insight",
@@ -34,6 +36,12 @@
   };
 
   const extraScreens = {
+    dashboard: {
+      file: "olympulse_dashboard.html",
+    },
+    delivery: {
+      file: "olympulse_delivery_choice.html",
+    },
     routeSelected: {
       file: "olympulse_route_selected.html",
     },
@@ -54,7 +62,7 @@
 
   function currentScreen() {
     const fromData = document.body && document.body.dataset.screen;
-    if (fromData && screens[fromData]) return fromData;
+    if (fromData && allScreens[fromData]) return fromData;
 
     const filename = window.location.pathname.split("/").pop();
     return filenameToScreen[filename] || "onboarding";
@@ -188,7 +196,10 @@
     flattenScreenChrome();
 
     const active = currentScreen();
-    if (active === "onboarding") return;
+    const isOnboarding = document.body.dataset.screen === "onboarding" ||
+      window.location.pathname.includes("role_selection") ||
+      window.location.pathname.includes("onboarding");
+    if (isOnboarding) return;
 
     const nav = document.createElement("nav");
     nav.className = "olympulse-bottom-nav";
@@ -249,6 +260,8 @@
       option.classList.toggle("is-selected", isSelected);
       option.setAttribute("aria-checked", String(isSelected));
     });
+    // Navigate to route trade-off screen after a brief visual delay
+    setTimeout(() => navigateTo("routeSelected"), 260);
   }
 
   function installPromptBridge() {
@@ -259,20 +272,45 @@
       if (normalized.includes("live event")) return navigateTo("event");
       if (normalized.includes("回饋")) return navigateTo("feedback");
       if (normalized.includes("personal insight") || normalized.includes("最後")) return navigateTo("insight");
-      if (normalized.includes("主地圖") || normalized.includes("地圖")) return navigateTo("map");
+      if (normalized.includes("main map") || normalized.includes("主地圖") || normalized.includes("地圖")) return navigateTo("map");
+      if (normalized.includes("dashboard") || normalized.includes("home") || normalized.includes("what do you need")) return navigateTo("dashboard");
 
       navigateTo(storyNext[screen] || "map");
     };
 
     window.olympulseNavigate = navigateTo;
+    window.olympulseAddNav = addNav;
   }
 
   installPromptBridge();
   wireStoryFlow();
   applyTheme(storedTheme() === "light");
 
+  function installBrandHomeLink() {
+    const screen = currentScreen();
+    if (screen === "onboarding") return;
+
+    // Standard screens use .app-header; personal insight uses .personal-insight-001
+    const header = document.querySelector(".app-header") ||
+                   document.querySelector(".personal-insight-001");
+    if (!header) return;
+
+    // Only make the brand/logo portion clickable (left side), not the whole header
+    const brandEl = header.querySelector(".brand") ||
+                    document.querySelector(".personal-insight-002");
+    const target = brandEl || header;
+
+    target.style.cursor = "pointer";
+    target.title = "Back to start";
+    target.addEventListener("click", (e) => {
+      if (e.target.closest(".theme-toggle, .settings-button, .personal-insight-005, .personal-insight-actions")) return;
+      navigateTo("onboarding");
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     installThemeToggle();
     addNav();
+    installBrandHomeLink();
   });
 })();

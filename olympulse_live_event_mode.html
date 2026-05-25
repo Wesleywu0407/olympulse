@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,175 +10,189 @@
 <link rel="stylesheet" href="css/dark-theme.css">
 </head>
 <body data-screen="event">
-
-  <!-- Top bar — event mode -->
-  <div class="live-event-001">
-    <div class="live-event-002">
-      <div class="live-event-003"></div>
-      <span class="live-event-004">BrisPulse</span>
-      <div class="live-event-005">
-        <div class="live-event-006"></div>
-        Live Event
+  <main class="live-event-screen" aria-label="BrisPulse live event pressure">
+    <header class="app-header live-event-header">
+      <div class="brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>BrisPulse</span>
+        <span class="event-status-pill"><i aria-hidden="true"></i>Live Event</span>
       </div>
-    </div>
-    <div class="live-event-007">
-      <div class="live-event-008">Local</div>
-      <button class="live-event-009 theme-toggle" type="button" aria-label="Switch to light mode" title="Switch to light mode">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 4h10M2 7h7M2 10h9" stroke="var(--color-text-secondary)" stroke-width="1.2" stroke-linecap="round"/></svg>
-      </button>
-    </div>
-  </div>
+      <div class="header-actions">
+        <span class="identity-pill">Local</span>
+        <button class="settings-button theme-toggle" type="button" aria-label="Switch to light mode" title="Switch to light mode">
+          <svg viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M10 3.3v2M10 14.7v2M4.8 4.8l1.4 1.4M13.8 13.8l1.4 1.4M3.3 10h2M14.7 10h2M4.8 15.2l1.4-1.4M13.8 6.2l1.4-1.4" />
+            <circle cx="10" cy="10" r="2.7" />
+          </svg>
+        </button>
+      </div>
+    </header>
 
-  <!-- Event alert banner -->
-  <div class="live-event-010">
-    <div class="live-event-011">
-      <div>
-        <div class="live-event-012">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1L1 10h10L6 1z" stroke="#E2631A" stroke-width="1.2" fill="none" stroke-linejoin="round"/><line x1="6" y1="5" x2="6" y2="7.5" stroke="#E2631A" stroke-width="1.2" stroke-linecap="round"/><circle cx="6" cy="9" r="0.6" fill="#E2631A"/></svg>
-          <p class="live-event-013">Athletics — Suncorp Stadium</p>
+    <!-- Amber alert card -->
+    <section aria-label="Event alert" style="margin:12px 16px 0;background:#1a2840;border:1px solid rgba(239,159,39,0.35);border-radius:14px;padding:14px 16px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+        <span style="font-size:16px;">⚠</span>
+        <span style="font-size:13px;font-weight:700;color:#EF9F27;">Athletics — Suncorp Stadium · 9:30 PM</span>
+      </div>
+      <p style="font-size:12px;color:#8a9bb0;line-height:1.5;margin:0;">Event ends at 9:30 PM. Expect major crowd surge across South Bank and Roma St in the next 45 min.</p>
+    </section>
+
+    <!-- Map section with pressure halos and route legend -->
+    <section aria-label="Live pressure map" style="margin:12px 16px 0;">
+      <svg viewBox="0 0 351 165" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:100%;border-radius:14px;display:block;">
+        <rect width="351" height="165" rx="14" fill="#0e1925"/>
+        <!-- grid lines -->
+        <g stroke="rgba(255,255,255,0.05)" stroke-linecap="round" fill="none">
+          <path d="M16 34H334" stroke-width="2"/>
+          <path d="M16 75H334" stroke-width="1.5"/>
+          <path d="M16 114H334" stroke-width="2"/>
+          <path d="M57 12V139" stroke-width="1"/>
+          <path d="M123 8V147" stroke-width="1.5"/>
+          <path d="M202 10V141" stroke-width="1"/>
+          <path d="M281 12V136" stroke-width="1"/>
+        </g>
+        <!-- river -->
+        <path d="M-4 151C47 137 84 145 126 154C180 166 224 151 269 144C305 138 331 144 355 151" stroke="rgba(29,158,117,0.25)" stroke-width="17" fill="none" stroke-linecap="round"/>
+        <path d="M-4 151C47 137 84 145 126 154C180 166 224 151 269 144C305 138 331 144 355 151" stroke="rgba(29,158,117,0.12)" stroke-width="9" fill="none" stroke-linecap="round"/>
+        <!-- South Bank red pressure halo -->
+        <circle cx="211" cy="116" r="52" fill="#E24B4A" opacity="0.07"/>
+        <circle cx="211" cy="116" r="40" fill="#E24B4A" opacity="0.11"/>
+        <circle cx="211" cy="116" r="29" fill="#E24B4A" opacity="0.16"/>
+        <circle cx="211" cy="116" r="18" fill="#E24B4A" opacity="0.22"/>
+        <!-- Roma St amber pressure halo -->
+        <circle cx="82" cy="47" r="38" fill="#EF9F27" opacity="0.08"/>
+        <circle cx="82" cy="47" r="27" fill="#EF9F27" opacity="0.13"/>
+        <circle cx="82" cy="47" r="17" fill="#EF9F27" opacity="0.18"/>
+        <!-- West End green calm halo -->
+        <circle cx="112" cy="122" r="25" fill="#1D9E75" opacity="0.08"/>
+        <circle cx="112" cy="122" r="15" fill="#1D9E75" opacity="0.13"/>
+        <!-- safe route dashed line -->
+        <path d="M82 47 C74 73 79 101 112 122" stroke="#1D9E75" stroke-width="3" stroke-dasharray="7 6" stroke-linecap="round" fill="none"/>
+        <!-- origin dot Roma St -->
+        <circle cx="82" cy="47" r="7.5" fill="#0e1925" stroke="#1D9E75" stroke-width="2"/>
+        <circle cx="82" cy="47" r="3.2" fill="#1D9E75"/>
+        <!-- destination dot West End -->
+        <circle cx="112" cy="122" r="6" fill="#0e1925" stroke="#1D9E75" stroke-width="2"/>
+        <circle cx="112" cy="122" r="2.5" fill="#1D9E75"/>
+        <!-- Roma St amber pill chip -->
+        <g transform="translate(82,32)">
+          <rect x="-28" y="-12" width="56" height="18" rx="9" fill="rgba(239,159,39,0.2)" stroke="#EF9F27" stroke-width="1"/>
+          <text x="0" y="3" text-anchor="middle" font-size="9" font-weight="600" fill="#EF9F27" font-family="sans-serif">Roma St</text>
+        </g>
+        <!-- South Bank red pill chip -->
+        <g transform="translate(211,102)">
+          <rect x="-36" y="-12" width="72" height="18" rx="9" fill="rgba(226,75,74,0.2)" stroke="#E24B4A" stroke-width="1"/>
+          <text x="0" y="3" text-anchor="middle" font-size="9" font-weight="600" fill="#E24B4A" font-family="sans-serif">South Bank</text>
+        </g>
+      </svg>
+      <!-- route legend -->
+      <div style="display:flex;gap:16px;padding:10px 4px 0;font-size:11px;color:#8a9bb0;">
+        <span style="display:flex;align-items:center;gap:5px;"><i style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#E24B4A;"></i>High</span>
+        <span style="display:flex;align-items:center;gap:5px;"><i style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#EF9F27;"></i>Building</span>
+        <span style="display:flex;align-items:center;gap:5px;"><i style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#1D9E75;"></i>Calm route</span>
+      </div>
+    </section>
+
+    <!-- Pressure forecast bar chart -->
+    <section aria-label="South Bank pressure forecast" style="margin:12px 16px 0;background:#1a2840;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:14px 16px;">
+      <p style="font-size:12px;color:#8a9bb0;margin:0 0 12px;">South Bank pressure — next 2.5 hrs</p>
+      <div style="display:flex;gap:8px;align-items:flex-end;height:56px;">
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+          <div style="width:100%;height:36px;background:#EF9F27;border-radius:4px 4px 0 0;"></div>
+          <span style="font-size:10px;color:#8a9bb0;">Now</span>
         </div>
-        <p class="live-event-014">Event ends at 9:30 PM. Expect major crowd surge across South Bank and Roma St in the next 45 min.</p>
-      </div>
-      <div class="live-event-015">9:30 PM</div>
-    </div>
-  </div>
-
-  <!-- MAP -->
-  <div class="live-event-016">
-    <svg width="100%" height="100%" viewBox="0 0 340 240" xmlns="http://www.w3.org/2000/svg">
-
-      <!-- River -->
-      <path d="M0 168 Q60 155 120 163 Q180 173 240 160 Q290 149 340 155" stroke="#C8E6F5" stroke-width="16" fill="none" stroke-linecap="round"/>
-
-      <!-- Roads -->
-      <line x1="0" y1="118" x2="340" y2="118" stroke="#DDD9D0" stroke-width="6"/>
-      <line x1="170" y1="0" x2="170" y2="240" stroke="#DDD9D0" stroke-width="4.5"/>
-      <line x1="30" y1="45" x2="310" y2="190" stroke="#DDD9D0" stroke-width="3"/>
-      <line x1="20" y1="178" x2="340" y2="82" stroke="#DDD9D0" stroke-width="2.5"/>
-      <line x1="80" y1="0" x2="80" y2="240" stroke="#E5E1D8" stroke-width="2"/>
-      <line x1="255" y1="0" x2="255" y2="240" stroke="#E5E1D8" stroke-width="1.5"/>
-      <line x1="0" y1="65" x2="340" y2="65" stroke="#E5E1D8" stroke-width="1.5"/>
-
-      <!-- Blocks -->
-      <rect x="100" y="78" width="55" height="36" rx="3" fill="#E5E1D8" opacity="0.8"/>
-      <rect x="185" y="82" width="50" height="32" rx="3" fill="#E5E1D8" opacity="0.8"/>
-      <rect x="35" y="26" width="36" height="26" rx="3" fill="#E5E1D8" opacity="0.7"/>
-
-      <!-- CRITICAL zone — South Bank -->
-      <circle class="live-event-017" cx="170" cy="148" r="52" fill="#E2631A" opacity="0.08"/>
-      <circle cx="170" cy="148" r="36" fill="#E2631A" opacity="0.15"/>
-      <circle cx="170" cy="148" r="20" fill="#E2631A" opacity="0.25"/>
-
-      <!-- HIGH — Roma St -->
-      <circle class="live-event-018" cx="80" cy="75" r="38" fill="#EF9F27" opacity="0.1"/>
-      <circle cx="80" cy="75" r="22" fill="#EF9F27" opacity="0.2"/>
-
-      <!-- HIGH — Suncorp area -->
-      <circle class="live-event-019" cx="255" cy="55" r="28" fill="#E2631A" opacity="0.1"/>
-      <circle cx="255" cy="55" r="16" fill="#E2631A" opacity="0.2"/>
-
-      <!-- MED — CBD -->
-      <circle class="live-event-020" cx="170" cy="75" r="18" fill="#EF9F27" opacity="0.12"/>
-      <circle cx="170" cy="75" r="11" fill="#EF9F27" opacity="0.18"/>
-
-      <!-- Safe route for locals (green dashed) -->
-      <path class="live-event-021" d="M80 75 Q75 110 85 135 Q95 155 110 168" stroke="#1D9E75" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-dasharray="6,4"/>
-
-      <!-- Closure mark on main road -->
-      <rect x="148" y="113" width="44" height="10" rx="3" fill="#E2631A" opacity="0.25"/>
-      <text x="170" y="121" text-anchor="middle" font-size="6.5" font-weight="500" fill="#993C1D">ROAD CLOSED</text>
-
-      <!-- Labels -->
-      <text x="170" y="151" text-anchor="middle" font-size="8" font-weight="500" fill="#7A3010">South Bank</text>
-      <text x="80" y="78" text-anchor="middle" font-size="7.5" font-weight="500" fill="#854F0B">Roma St</text>
-      <text x="255" y="58" text-anchor="middle" font-size="7" font-weight="500" fill="#7A3010">Suncorp</text>
-      <text x="170" y="78" text-anchor="middle" font-size="7" fill="#854F0B">CBD</text>
-
-      <!-- User location -->
-      <circle cx="80" cy="75" r="6" fill="white" stroke="#1D9E75" stroke-width="2"/>
-      <circle cx="80" cy="75" r="3" fill="#1D9E75"/>
-
-    </svg>
-
-    <!-- Legend -->
-    <div class="live-event-022">
-      <div class="live-event-023">
-        <div class="live-event-024"></div>
-        <span class="live-event-025">Critical</span>
-      </div>
-      <div class="live-event-026"></div>
-      <div class="live-event-023">
-        <div class="live-event-027"></div>
-        <span class="live-event-025">High</span>
-      </div>
-      <div class="live-event-026"></div>
-      <div class="live-event-023">
-        <div class="live-event-028"></div>
-        <span class="live-event-029">Live</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Pressure timeline -->
-  <div class="live-event-030">
-    <div class="live-event-031">
-      <p class="live-event-032">Pressure forecast — next 2 hrs</p>
-      <p class="live-event-033">South Bank</p>
-    </div>
-    <div class="live-event-034">
-      <div class="live-event-035">
-        <div class="live-event-036"></div>
-        <span class="live-event-037">Now</span>
-      </div>
-      <div class="live-event-035">
-        <div class="live-event-038"></div>
-        <span class="live-event-037">+30m</span>
-      </div>
-      <div class="live-event-035">
-        <div class="live-event-039"></div>
-        <span class="live-event-040">+1hr</span>
-      </div>
-      <div class="live-event-035">
-        <div class="live-event-041"></div>
-        <span class="live-event-037">+1.5h</span>
-      </div>
-      <div class="live-event-035">
-        <div class="live-event-042"></div>
-        <span class="live-event-037">+2hr</span>
-      </div>
-      <div class="live-event-035">
-        <div class="live-event-043"></div>
-        <span class="live-event-037">+2.5h</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Action cards -->
-  <div class="live-event-044">
-    <button class="live-event-045" type="button">
-      <div class="live-event-002">
-        <div class="live-event-046">
-          <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5l3 3 6-6" stroke="#0F6E56" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+          <div style="width:100%;height:44px;background:#EF9F27;border-radius:4px 4px 0 0;opacity:0.85;"></div>
+          <span style="font-size:10px;color:#8a9bb0;">+30m</span>
         </div>
-        <div>
-          <p class="live-event-047">Safe detour via West End</p>
-          <p class="live-event-048">Avoids all closures — 19 min</p>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+          <div style="width:100%;height:52px;background:#E24B4A;border-radius:4px 4px 0 0;"></div>
+          <span style="font-size:10px;color:#8a9bb0;">+1hr</span>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+          <div style="width:100%;height:48px;background:#E24B4A;border-radius:4px 4px 0 0;opacity:0.85;"></div>
+          <span style="font-size:10px;color:#8a9bb0;">+1.5hr</span>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+          <div style="width:100%;height:32px;background:#EF9F27;border-radius:4px 4px 0 0;opacity:0.75;"></div>
+          <span style="font-size:10px;color:#8a9bb0;">+2hr</span>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+          <div style="width:100%;height:18px;background:#1D9E75;border-radius:4px 4px 0 0;"></div>
+          <span style="font-size:10px;color:#8a9bb0;">+2.5hr</span>
         </div>
       </div>
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="var(--color-text-secondary)" stroke-width="1.3" stroke-linecap="round"/></svg>
-    </button>
-    <button class="live-event-045" type="button">
-      <div class="live-event-002">
-        <div class="live-event-049">
-          <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="2" y="4" width="9" height="6" rx="1.5" stroke="#185FA5" stroke-width="1.2" fill="none"/><path d="M4.5 4V3a2 2 0 014 0v1" stroke="#185FA5" stroke-width="1.2" fill="none"/></svg>
-        </div>
-        <div>
-          <p class="live-event-047">Wait 2 hrs — crowds clear</p>
-          <p class="live-event-050">Pressure drops after 11 PM</p>
-        </div>
+    </section>
+
+    <section class="event-context-card" aria-labelledby="event-context-title">
+      <p id="event-context-title" class="section-kicker">Recurring in Brisbane</p>
+      <div class="event-list">
+        <article class="event-row">
+          <div>
+            <h2>AFL at Gabba</h2>
+            <p>Repeatable pressure pattern</p>
+          </div>
+          <span class="pressure-chip pressure-chip--high">Tonight</span>
+        </article>
+        <article class="event-row">
+          <div>
+            <h2>Riverfire Festival</h2>
+            <p>CBD and riverside surge</p>
+          </div>
+          <span class="pressure-chip pressure-chip--building">Sat</span>
+        </article>
+        <article class="event-row">
+          <div>
+            <h2>Arena Concert</h2>
+            <p>Station exit pressure</p>
+          </div>
+          <span class="pressure-chip pressure-chip--muted">Sun</span>
+        </article>
       </div>
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="var(--color-text-secondary)" stroke-width="1.3" stroke-linecap="round"/></svg>
-    </button>
-  </div>
+    </section>
+
+    <section class="pressure-section" aria-labelledby="pressure-title">
+      <p id="pressure-title" class="section-kicker">Pressure moments now</p>
+
+      <div class="moments-card">
+        <article class="moment-row">
+          <div>
+            <h2>Security perimeter gates</h2>
+            <p>Entry surge expected 18:30</p>
+          </div>
+          <span class="pressure-chip pressure-chip--high">High</span>
+        </article>
+
+        <article class="moment-row">
+          <div>
+            <h2>Station concourse exits</h2>
+            <p>Post-event departure peak</p>
+          </div>
+          <span class="pressure-chip pressure-chip--building">Building</span>
+        </article>
+
+        <article class="moment-row">
+          <div>
+            <h2>Transfer bottleneck</h2>
+            <p>Bus interchange · Roma St</p>
+          </div>
+          <span class="pressure-chip pressure-chip--busy">Busy</span>
+        </article>
+
+        <article class="moment-row">
+          <div>
+            <h2>Post-event departures</h2>
+            <p>~21:30 · stagger advised</p>
+          </div>
+          <span class="pressure-chip pressure-chip--calm">Calm</span>
+        </article>
+      </div>
+    </section>
+
+    <aside class="benchmark-card" aria-label="Event benchmark note">
+      <h2>Benchmarks: Paris 2024 · Expo 2025 Osaka</h2>
+      <p>Official systems manage capacity; BrisPulse translates to individual guidance</p>
+    </aside>
+  </main>
 </body>
 </html>
