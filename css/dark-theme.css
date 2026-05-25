@@ -949,3 +949,12 @@ body.light-mode .bar.empty {
 .static-nav .olympulse-bottom-nav__item[data-nav-active="true"] {
   color: #1D9E75 !important;
 }
+
+/* Settings (delivery) button */
+.delivery-settings-btn {
+  opacity: 0.65;
+  transition: opacity 150ms ease;
+}
+.delivery-settings-btn:hover {
+  opacity: 1;
+}

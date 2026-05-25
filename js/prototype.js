@@ -305,7 +305,7 @@
     target.style.cursor = "pointer";
     target.title = "Back to start";
     target.addEventListener("click", (e) => {
-      if (e.target.closest(".theme-toggle, .settings-button, .personal-insight-005, .personal-insight-actions")) return;
+      if (e.target.closest(".theme-toggle, .settings-button, .personal-insight-005, .personal-insight-actions, .delivery-settings-btn")) return;
       navigateTo("onboarding");
     });
   }
