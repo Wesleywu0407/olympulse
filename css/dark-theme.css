@@ -939,3 +939,13 @@ body.light-mode .mood-pill {
 body.light-mode .bar.empty {
   background: #e5e3de !important;
 }
+
+/* Static nav active state highlight */
+.static-nav .olympulse-bottom-nav__item[data-screen-active="true"],
+.static-nav .olympulse-bottom-nav__item.is-active {
+  color: #1D9E75 !important;
+}
+
+.static-nav .olympulse-bottom-nav__item[data-nav-active="true"] {
+  color: #1D9E75 !important;
+}

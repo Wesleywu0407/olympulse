@@ -192,6 +192,8 @@
   }
 
   function addNav() {
+    // Skip if a static nav is already in the page
+    if (document.querySelector('.static-nav')) return;
     removeLegacyNav();
     flattenScreenChrome();
 
